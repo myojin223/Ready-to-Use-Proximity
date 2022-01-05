@@ -1,0 +1,18 @@
+|(How to use)|
+
+1. Install Java 17
+2. Edit Decklist.txt by adding what cards you want beginning with the quantity
+|(Example: 1 Sol Ring)|
+3. Save and close Decklist.txt
+4. Double click on the .bat file you would like to use. The files are named after which template they use. 
+5. Go to the images folder to view your completed cards
+
+|(Render All PowerShell Script)|
+
+1. Right click on Render All PowerShell Script and click "Run with PowerShell"
+2. View all cards in the Completed folder
+
+
+Proximity Github Link: https://github.com/Haven-King/Proximity
+Proximity Wiki Link: https://github.com/Haven-King/Proximity/wiki |(Click the selections on the right side to navigate the wiki)|
+My Proximity Repositories: https://github.com/myojin223?tab=repositories
