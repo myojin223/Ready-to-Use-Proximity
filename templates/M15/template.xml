@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <Template name="M15 Master" author="ChilliAxe and Haven King" width="3288" height="4488"
-          proximity_version="0.5.0"
+          proximity_version="0.6.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Proximity-Engine/Proximity/0.5.0/template.xsd">
+          xsi:noNamespaceSchemaLocation="https://hephaestus.dev/proximity/template.xsd">
     <Options>
         <!-- Outline the text at the bottom of the card (copyright, artist credit, etc.) -->
         <ToggleOption id="bottom_text_outline" default="false"/>
@@ -45,10 +45,19 @@
         <Definition name="one_or_two_colors">
             <Range key="proximity.mtg.color_count" min="1" max="2"/>
         </Definition>
+        <Definition name="hollow_crown">
+            <Or>
+                <IsPresent key="frame_effects.companion"/>
+                <And>
+                    <IsPresent key="frame_effects.legendary"/>
+                    <IsPresent key="frame_effects.nyxtouched"/>
+                </And>
+            </Or>
+        </Definition>
     </ConditionDefinitions>
     <Resources>
         <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0"/>
-        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.7"/>
+        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.8"/>
     </Resources>
     <Layers>
         <Selector>
@@ -313,6 +322,16 @@
                             <Branch id="standard"/>
                         </Branches>
                     </Fork>
+                    <Mask>
+                        <Selector>
+                            <Image src="~/masks/hollow_crown">
+                                <Conditions>
+                                    <IsEquals key="hollow_crown" value="true"/>
+                                </Conditions>
+                            </Image>
+                            <Rectangle width="3288" height="4488" color="#FF000000"/>
+                        </Selector>
+                    </Mask>
                 </Selector>
                 <Group id="border">
                     <Rectangle width="3288" height="4488" color="${proximity.options.border}">
@@ -411,8 +430,8 @@
                         <Image id="gold"/>
                     </Selector>
                     <Branches>
-                        <Branch id="companion">
-                            <IsPresent key="frame_effects.companion"/>
+                        <Branch id="hollow">
+                            <IsEquals key="hollow_crown" value="true"/>
                         </Branch>
                         <Branch id="legendary">
                             <IsPresent key="proximity.mtg.types.legendary"/>
@@ -657,7 +676,7 @@
                             <Text id="back" x="381" y="2665" value="${type_line}">
                                 <AttributeModifier name="x" value="531">
                                     <IsPresent key="color_indicator"/>
-                                    <FileExists src="../../overlays/color_indicators/$join{color_indicator}.png"/>
+                                    <FileExists src="~/overlays/color_indicators/$join{color_indicator}.png"/>
                                 </AttributeModifier>
                             </Text>
                             <Style font="Beleren2016-Bold" color="#000000" size="135" kerning="2"/>
@@ -677,7 +696,7 @@
                 <Image src="overlays/color_indicators/$join{color_indicator}">
                     <Conditions>
                         <IsPresent key="color_indicator"/>
-                        <FileExists src="../../overlays/color_indicators/$join{color_indicator}.png"/>
+                        <FileExists src="~/overlays/color_indicators/$join{color_indicator}.png"/>
                     </Conditions>
                 </Image>
                 <Group id="pt">
@@ -733,19 +752,21 @@
                     </Conditions>
                 </Group>
                 <Selector id="watermarks">
-                    <Fork id="basics">
-                        <Image src="$join{colors}"/>
+                    <Selector id="basics">
+                        <Effect name="brightness" amount="-15%">
+                            <Mask>
+                                <Image src="flavor/$join{colors}" x="1644" y="3400" horizontal_alignment="middle" vertical_alignment="middle"/>
+                            </Mask>
+                            <Conditions>
+                                <IsPresent key="flavor_text"/>
+                            </Conditions>
+                        </Effect>
+                        <Image src="standard/$join{colors}" x="1644" y="3400" horizontal_alignment="middle" vertical_alignment="middle"/>
                         <Conditions>
                             <IsPresent key="proximity.mtg.types.basic"/>
                             <IsEquals key="proximity.mtg.color_count" value="1"/>
                         </Conditions>
-                        <Branches>
-                            <Branch id="flavor">
-                                <IsPresent key="flavor_text"/>
-                            </Branch>
-                            <Branch id="standard"/>
-                        </Branches>
-                    </Fork>
+                    </Selector>
                     <Effect name="brightness" amount="-15%">
                         <CardModifier key="proximity.options.watermark" value="${set}">
                             <IsEquals key="proximity.options.set_symbol_watermark"/>
@@ -814,7 +835,7 @@
                             <VerticalLayout>
                                 <Spacer id="spacing1" width="10" height="75"/>
                                 <Selector>
-                                    <Image id="bar" x="36" src="../../overlays/flavor_bar">
+                                    <Image x="36" src="~/overlays/flavor_bar">
                                         <Conditions>
                                             <IsEquals key="proximity.options.flavor_bar"/>
                                         </Conditions>
@@ -858,7 +879,7 @@
                         <Conditions>
                             <IsEquals key="layout" value="transform"/>
                             <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature"/>
-                            <IsEquals key="proximity.mtg.types.creature"/>
+                            <IsPresent key="proximity.mtg.types.creature"/>
                         </Conditions>
                     </Wrap>
                     <Style font="MPlantin" italicFont="MPlantin-Italic" color="#000000" size="145"/>
