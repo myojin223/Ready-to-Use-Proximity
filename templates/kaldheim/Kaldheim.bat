@@ -1,2 +1,1 @@
-java -jar proximity.jar --cards=Decklist.txt --use_official_art=true --reminder_text=true --template=kaldheim --copyright=false --override=set:pz1 --override=artist:""
-cmd /k
+java -jar proximity.jar --cards=Decklist.txt --art_source=BEST --reminder_text=true --template=kaldheim --copyright=false --set_symbol=pz1 --use_card_back=false

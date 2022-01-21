@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <Template name="M15 Master" author="ChilliAxe and Haven King" width="3288" height="4488"
-          proximity_version="0.6.0"
+          proximity_version="0.5.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://hephaestus.dev/proximity/template.xsd">
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Proximity-Engine/Proximity/0.5.0/template.xsd">
     <Options>
         <!-- Outline the text at the bottom of the card (copyright, artist credit, etc.) -->
         <ToggleOption id="bottom_text_outline" default="false"/>
@@ -44,7 +44,7 @@
     </ConditionDefinitions>
     <Resources>
         <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0"/>
-        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.8"/>
+        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.6"/>
     </Resources>
     <Layers>
         <Selector>
@@ -618,16 +618,16 @@
                 </Text>
                 <SquishBox>
                     <Main id="set_symbol">
-                        <Spacer x="2893" y="2550" width="10" height="220"/>
+                        <Spacer x="2900" y="2550" width="10" height="220"/>
                         <Group>
                             <Selector>
                                 <!-- Certain sets don't use a uniform color palette, so this is a necessary evil -->
-                                <SVG x="2816" y="2628" src="${rarity}/${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                <SVG x="2876" y="2628" src="${rarity}/${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
                                     <Conditions>
                                         <FileExists src="${rarity}/${proximity.options.set_symbol}.svg"/>
                                     </Conditions>
                                 </SVG>
-                                <SVG x="2900" y="2680" src="${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                <SVG x="2960" y="2680" src="${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
                                     <Conditions>
                                         <FileExists src="${proximity.options.set_symbol}.svg"/>
                                     </Conditions>
@@ -752,12 +752,12 @@
                     </Conditions>
                 </Effect>
                 <Group id="oracle_text">
-                    <Text id="mutate" value="$oracle_text{proximity.util.mutate_text}" x="400" y="2800" width="2488" height="500">
+                    <Text id="mutate" value="$oracle_text{proximity.util.mutate_text}" x="400" y="2850" width="2488" height="450">
                         <Conditions>
                             <IsPresent key="keywords.mutate"/>
                         </Conditions>
                     </Text>
-                    <VerticalLayout x="400" y="2795" width="2488" height="1190" alignment="middle">
+                    <VerticalLayout x="400" y="2850" width="2488" height="1075" alignment="middle">
                         <AttributeModifier name="height" value="1037">
                             <IsPresent key="layout"/>
                             <IsEquals key="layout" value="modal_dfc"/>
@@ -841,7 +841,7 @@
                     <Style font="MPlantin" italicFont="MPlantin-Italic" color="#000000" size="135"/>
                 </Group>
                 <Group id="bottom_text">
-                    <HorizontalLayout id="set_lang_and_artist" x="335" y="4209">
+                    <HorizontalLayout id="set_lang_and_artist" x="225" y="4209">
                         <Text y="2" value="${set}">
                             <Style font="Gotham-Medium-Regular" size="68" capitalization="all_caps" kerning="10">
                                 <Outline color="#000000" weight="0"/>
@@ -867,10 +867,10 @@
                         </HorizontalLayout>
                     </HorizontalLayout>
                     <Group id="disclaimer">
-                        <Text x="335" y="4131" value="2022 Custom Proxy">
+                        <Text x="225" y="4131" value="2022 Custom Proxy">
                             <Style font="Altone" size="70"/>
                         </Text>
-                        <Text value="NOT FOR SALE" x="1010" y="4136">
+                        <Text value="NOT FOR SALE" x="900" y="4136">
                             <Style font="Beleren2016-Bold" size="71" kerning="1"/>
                         </Text>
                     </Group>
