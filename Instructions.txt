@@ -1,8 +1,7 @@
 |(How to use)|
 
 1. Install Java 17
-2. Edit Decklist.txt by adding what cards you want beginning with the quantity
-|(Example: 1 Sol Ring)|
+2. Edit Decklist.txt by adding what cards you want.
 3. Save and close Decklist.txt
 4. Double click on the .bat file you would like to use. The files are named after which template they use. 
 5. Go to the images folder to view your completed cards

@@ -897,7 +897,7 @@
                         </HorizontalLayout>
                     </HorizontalLayout>
                     <Group id="disclaimer">
-                        <Text x="335" y="4131" value="2022 WarpDandy ¤">
+                        <Text x="335" y="4131" value="2022 Custom Proxy">
                             <Style font="Altone" size="70"/>
                         </Text>
                         <Text value="NOT FOR SALE" x="1010" y="4136">
