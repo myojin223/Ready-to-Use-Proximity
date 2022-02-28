@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<Template name="BlackExtented" author="IshanCurse" width="3288" height="4488" proximity_version="0.6.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://hephaestus.dev/proximity/template.xsd">
+<Template name="BlackExtented" author="IshanCurse" width="3288" height="4488" proximity_version="0.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Proximity-Engine/Proximity/0.5.0/template.xsd">
     <Options>
         <Enumeration id="border" default="black">
             <EnumerationValue value="black" />
@@ -34,6 +34,7 @@
     </ConditionDefinitions>
     <Resources>
         <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0" />
+        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.0" />
     </Resources>
     <Layers>
         <Selector>

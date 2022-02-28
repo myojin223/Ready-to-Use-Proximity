@@ -1,0 +1,1 @@
+java -jar proximity.jar --cards=Decklist.txt --art_source=LOCAL --reminder_text=true --template=SSDFC --copyright=false --use_card_back=false --set_symbol=NONE --remove_original_card=false

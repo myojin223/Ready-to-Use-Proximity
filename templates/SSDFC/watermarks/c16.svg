@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="24.893898"
+   height="39.133465"
+   viewBox="0 0 24.893898 39.133464"
+   id="svg4"
+   sodipodi:docname="c16.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview66"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="21.056147"
+     inkscape:cx="12.466668"
+     inkscape:cy="19.542986"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs59">
+    <!-- This is the gradient that will actually be used on
+     the cards. The colors themselves will be provided by the
+     template, but the x values, y values, and offsets will be
+     used from the SVG. -->
+    <linearGradient
+       id="rarity"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop2" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop4" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(241,142,30);stop-opacity:1"
+         id="stop6" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop8" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop10" />
+    </linearGradient>
+    <!-- These gradients are here so that you can visualize
+     what the set symbol would like like in that rarity. The
+     only gradient that matters in the end is the "rarity"
+     gradient. -->
+    <linearGradient
+       id="mythic"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop9" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop11" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(241,142,30);stop-opacity:1"
+         id="stop13" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop15" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop17" />
+    </linearGradient>
+    <linearGradient
+       id="rare"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop20" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop22" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(211,178,108);stop-opacity:1"
+         id="stop24" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop26" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop28" />
+    </linearGradient>
+    <linearGradient
+       id="special"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop31" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop33" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(201, 173, 221);stop-opacity:1"
+         id="stop35" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop37" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop39" />
+    </linearGradient>
+    <linearGradient
+       id="uncommon"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop42" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop44" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(196,222,238);stop-opacity:1"
+         id="stop46" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop48" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop50" />
+    </linearGradient>
+    <linearGradient
+       id="common"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(0,0,0);stop-opacity:1"
+         id="stop53" />
+    </linearGradient>
+    <linearGradient
+       id="rarity-outline"
+       x1="0"
+       y1="31.212065"
+       x2="0"
+       y2="31.212065"
+       gradientTransform="scale(0.79759321,1.253772)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:rgb(0,0,0);stop-opacity:1"
+         id="stop56" />
+    </linearGradient>
+  </defs>
+  <path
+     id="path61"
+     style="fill:url(#rarity-outline)"
+     d="M 12.496094 0 C 11.669989 1.7795279 11.053884 2.9939803 8.3359375 3.4492188 C 10.300185 4.2012493 10.825093 4.6252912 11.121094 5.7539062 L 11.115234 5.7539062 L 10.941406 5.8320312 C 9.566721 6.450385 8.3196679 7.1153478 7.0429688 7.4042969 L 6.953125 7.4296875 C 5.1097094 7.9612687 3.0058934 7.7946943 0.78125 8.1269531 L 0 8.2441406 L 0.037109375 9.0332031 C 0.22941203 13.144771 -0.3110453 17.448257 0.41796875 21.789062 L 0.41992188 21.804688 L 0.42382812 21.818359 C 1.6889422 28.028142 6.6117432 32.248328 11.027344 35.863281 L 11.060547 35.888672 L 11.09375 35.912109 L 12.148438 36.621094 L 12.681641 39.132812 L 13.134766 36.478516 L 13.904297 35.880859 L 13.919922 35.869141 C 18.881373 31.670701 23.992433 27.097542 24.845703 19.318359 L 24.849609 19.275391 L 24.849609 19.234375 C 24.891839 15.805078 24.827179 12.39159 24.880859 9.0019531 L 24.894531 8.1777344 L 24.072266 8.1152344 C 22.879635 8.0235722 21.646953 7.8571644 20.349609 7.8242188 C 18.132456 7.5944388 15.103493 6.405438 14.015625 5.859375 L 13.90625 5.8046875 C 14.341522 4.5759702 14.722121 4.0941034 16.65625 3.4492188 C 13.876862 2.8977446 13.324583 1.775953 12.496094 0 z M 11.300781 6.6308594 C 11.562781 7.8288594 12.036327 9.4976094 10.861328 10.349609 C 8.8263277 11.902609 6.1407969 11.786391 3.7167969 11.775391 C 3.8437969 15.540391 2.9523594 19.486031 4.4433594 23.082031 C 5.8423594 26.539031 8.7756256 28.982187 11.515625 31.367188 L 11.839844 35.173828 C 7.4388443 31.90182 2.47225 27.490531 1.28125 21.644531 C 0.58025004 17.470531 1.1071562 13.204187 0.91015625 8.9921875 C 2.9991562 8.6801875 5.1493125 8.8614844 7.1953125 8.2714844 C 8.6443125 7.9514844 9.9557819 7.2358594 11.300781 6.6308594 z M 13.623047 6.640625 C 15.704047 7.677625 17.908766 8.5953125 20.259766 8.6953125 C 21.516766 8.7223125 22.756859 8.8922812 24.005859 8.9882812 C 23.951859 12.398281 24.016609 15.811656 23.974609 19.222656 C 23.823609 23.504656 21.600437 27.451219 18.648438 30.449219 C 17.002437 32.164219 15.164516 33.667172 13.353516 35.201172 L 13.576172 31.375 C 16.504172 28.901 19.435469 26.226375 20.730469 22.484375 C 21.894469 19.023375 21.111 15.332672 21.25 11.763672 C 18.815 11.786672 16.0935 11.910266 14.0625 10.322266 C 12.9105 9.4552656 13.415047 7.8375781 13.623047 6.6425781 L 13.623047 6.640625 z M 5.0410156 13.09375 C 6.7520156 13.40675 8.494609 13.436672 10.224609 13.263672 L 11.423828 29.367188 C 9.1118287 28.092187 7.338375 25.965156 6.109375 23.660156 C 4.460375 20.384156 5.1800156 16.61175 5.0410156 13.09375 z M 19.886719 13.103516 C 19.725719 16.464516 20.422687 20.006266 19.054688 23.197266 C 17.936688 25.732266 15.932422 27.770391 13.732422 29.400391 L 14.71875 13.265625 C 16.44175 13.434625 18.179719 13.396516 19.886719 13.103516 z " />
+</svg>

@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+
+<Template name="Blacked Out" author="Haven King" width="2176" height="2960"
+          proximity_version="0.5.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../template.xsd">
+    <Options>
+        <Enumeration id="border" default="black">
+            <EnumerationValue value="black"/>
+            <EnumerationValue value="gold" id="gold"/>
+            <EnumerationValue value="silver"/>
+            <EnumerationValue value="none"/>
+        </Enumeration>
+        <ToggleOption id="bottom_text_outline" default="false"/>
+        <ToggleOption id="copyright" default="true"/>
+        <ToggleOption id="flavor_text" default="true"/>
+        <ToggleOption id="flavor_bar" default="true"/>
+        <ToggleOption id="show_set_symbol" default="true"/>
+        <ToggleOption id="set_symbol_watermark" default="false"/>
+        <ToggleOption id="floating" default="false"/>
+        <StringOption id="set_symbol" default="${set}"/>
+        <StringOption id="watermark" default="${watermark}"/>
+    </Options>
+    <Imports>
+        <Import src="symbols"/>
+        <Import src="styles"/>
+    </Imports>
+    <Plugins>
+        <Import repository="https://hephaestus.dev/release" group="dev.hephaestus" artifact="proximity-mtg" version=">=1.0.0"/>
+    </Plugins>
+    <ConditionDefinitions>
+        <Definition name="colorless_artifact">
+            <IsPresent key="proximity.mtg.types.artifact"/>
+            <IsEquals key="proximity.mtg.color_count" value="0"/>
+        </Definition>
+        <Definition name="one_or_two_colors">
+            <Range key="proximity.mtg.color_count" min="1" max="2"/>
+        </Definition>
+    </ConditionDefinitions>
+    <Resources>
+        <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0"/>
+    </Resources>
+    <Layers>
+        <Selector>
+            <Group>
+                <Image id="smoke">
+                    <Color>
+                        <Selector>
+                            <Image src="../colors/land">
+                                <Conditions>
+                                    <IsPresent key="card_faces[1].proximity.mtg.types.land"/>
+                                    <IsEquals key="card_faces[1].proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/$join{card_faces[1].colors}">
+                                <Conditions>
+                                    <Range key="card_faces[1].proximity.mtg.color_count" min="1" max="2"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/colorless">
+                                <Conditions>
+                                    <IsEquals key="card_faces[1].proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/gold"/>
+                        </Selector>
+                    </Color>
+                    <Effects>
+                        <Effect name="hsb" saturation="100">
+                            <Conditions>
+                                <Not>
+                                    <And>
+                                        <IsPresent key="card_faces[1].proximity.mtg.types.land"/>
+                                        <IsEquals key="card_faces[1].proximity.mtg.color_count" value="0"/>
+                                    </And>
+                                </Not>
+                            </Conditions>
+                        </Effect>
+                    </Effects>
+                </Image>
+                <Image id="smoke">
+                    <Color>
+                        <Selector>
+                            <Image src="../colors/land">
+                                <Conditions>
+                                    <IsPresent key="card_faces[0].proximity.mtg.types.land"/>
+                                    <IsEquals key="card_faces[0].proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/$join{card_faces[0].colors}">
+                                <Conditions>
+                                    <Range key="card_faces[0].proximity.mtg.color_count" min="1" max="2"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/colorless">
+                                <Conditions>
+                                    <IsEquals key="card_faces[0].proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/gold"/>
+                        </Selector>
+                    </Color>
+                    <Effects>
+                        <Effect name="hsb" saturation="100">
+                            <Conditions>
+                                <Not>
+                                    <And>
+                                        <IsPresent key="card_faces[0].proximity.mtg.types.land"/>
+                                        <IsEquals key="card_faces[0].proximity.mtg.color_count" value="0"/>
+                                    </And>
+                                </Not>
+                            </Conditions>
+                        </Effect>
+                    </Effects>
+                    <Mask>
+                        <Image src="../top_half_mask"/>
+                    </Mask>
+                </Image>
+                <Group id="frames">
+                    <Fork id="top">
+                        <Image/>
+                        <Branches>
+                            <Branch id="creature">
+                                <Or>
+                                    <IsPresent key="card_faces[0].proximity.mtg.types.creature"/>
+                                    <IsPresent key="card_faces[0].proximity.mtg.types.vehicle"/>
+                                </Or>
+                            </Branch>
+                            <Branch id="noncreature"/>
+                        </Branches>
+                    </Fork>
+                    <Fork id="bottom">
+                        <Image/>
+                        <Branches>
+                            <Branch id="creature">
+                                <Or>
+                                    <IsPresent key="card_faces[1].proximity.mtg.types.creature"/>
+                                    <IsPresent key="card_faces[1].proximity.mtg.types.vehicle"/>
+                                </Or>
+                            </Branch>
+                            <Branch id="noncreature"/>
+                        </Branches>
+                    </Fork>
+                </Group>
+                <Group id="overlays">
+                    <Group id="transform">
+                        <Image id="sun_and_moon">
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="frame_effects.sunmoondfc"/>
+                                    <IsEquals key="set" value="mid"/>
+                                    <IsEquals key="set" value="vow"/>
+                                </Or>
+                            </Conditions>
+                        </Image>
+                        <Image id="eldrazi_and_moon">
+                            <Conditions>
+                                <IsPresent key="frame_effects.mooneldrazidfc"/>
+                            </Conditions>
+                        </Image>
+                    </Group>
+                    <Image id="modal">
+                        <Conditions>
+                            <IsEquals key="layout" value="modal_dfc"/>
+                        </Conditions>
+                    </Image>
+                </Group>
+                <SquishBox>
+                    <Main id="cost">
+                        <HorizontalLayout x="1935" y="340" alignment="end">
+                            <Spacer width="33" height="10"/>
+                            <Text value="${card_faces[0].mana_cost}">
+                                <Style font="NDPMTG" size="115">
+                                    <Shadow color="#000000" dX="-2" dY="7"/>
+                                </Style>
+                            </Text>
+                        </HorizontalLayout>
+                    </Main>
+                    <Flex>
+                        <Text x="351" y="340" value="${card_faces[0].name}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                        </Text>
+                    </Flex>
+                </SquishBox>
+                <SquishBox>
+                    <Main>
+                        <Selector>
+                            <HorizontalLayout x="1935" y="1605" alignment="end">
+                                <Spacer width="33" height="10"/>
+                                <Text value="${card_faces[1].mana_cost}">
+                                    <Style font="NDPMTG" size="115">
+                                        <Shadow color="#000000" dX="-2" dY="7"/>
+                                    </Style>
+                                </Text>
+                                <Conditions>
+                                    <IsEquals key="layout" value="modal_dfc"/>
+                                </Conditions>
+                            </HorizontalLayout>
+                            <Group id="set_symbol">
+                                <Spacer x="1919" y="1573" width="7" height="145"/>
+                                <Selector>
+                                    <!-- Certain sets don't use a uniform color palette, so this is a necessary evil -->
+                                    <SVG x="1933" y="1573" src="${rarity}/${proximity.options.set_symbol}" width="231" height="118" horizontal_alignment="end">
+                                        <Conditions>
+                                            <FileExists src="${rarity}/${proximity.options.set_symbol}.svg"/>
+                                        </Conditions>
+                                    </SVG>
+                                    <SVG x="1933" y="1573" src="${proximity.options.set_symbol}" width="231" height="118" horizontal_alignment="end">
+                                        <Conditions>
+                                            <FileExists src="${proximity.options.set_symbol}.svg"/>
+                                        </Conditions>
+                                    </SVG>
+                                </Selector>
+                                <CardModifier key="proximity.options.set_symbol" value="pz1">
+                                    <Or>
+                                        <Not>
+                                            <IsPresent key="proximity.options.set_symbol"/>
+                                        </Not>
+                                        <Not>
+                                            <FileExists src="${proximity.options.set_symbol}.svg"/>
+                                        </Not>
+                                    </Or>
+                                </CardModifier>
+                                <Conditions>
+                                    <IsEquals key="proximity.options.show_set_symbol"/>
+                                </Conditions>
+                            </Group>
+                        </Selector>
+                    </Main>
+                    <Flex>
+                        <Text x="351" y="1605" value="${card_faces[1].name}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                        </Text>
+                    </Flex>
+                </SquishBox>
+                <Group id="oracle_text" x="265">
+                    <VerticalLayout y="425" width="1646" height="945" alignment="middle">
+                        <Text id="top" value="$oracle_text{card_faces[0].oracle_text}"/>
+                        <Conditions>
+                            <IsPresent key="card_faces[0].oracle_text"/>
+                        </Conditions>
+                    </VerticalLayout>
+                    <VerticalLayout y="1695" width="1646" height="945" alignment="middle">
+                        <Text id="bottom" value="$oracle_text{card_faces[1].oracle_text}"/>
+                        <Conditions>
+                            <IsPresent key="card_faces[1].oracle_text"/>
+                        </Conditions>
+                    </VerticalLayout>
+                    <Style font="MPlantin" italicFont="MPlantin-Italic" color="#FFFFFF" size="89"/>
+                </Group>
+                <Text id="pt" x="1813" y="1407" alignment="center" value="${card_faces[0].power}/${card_faces[0].toughness}">
+                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                    <Conditions>
+                        <Or>
+                            <IsPresent key="card_faces[0].proximity.mtg.types.creature"/>
+                            <IsPresent key="card_faces[0].proximity.mtg.types.vehicle"/>
+                        </Or>
+                    </Conditions>
+                </Text>
+                <Text id="pt" x="1813" y="2673" alignment="center" value="${card_faces[1].power}/${card_faces[1].toughness}">
+                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                    <Conditions>
+                        <Or>
+                            <IsPresent key="card_faces[1].proximity.mtg.types.creature"/>
+                            <IsPresent key="card_faces[1].proximity.mtg.types.vehicle"/>
+                        </Or>
+                    </Conditions>
+                </Text>
+                <Conditions>
+                    <IsEquals key="proximity.mtg.is_original_two_sided_card"/>
+                </Conditions>
+            </Group>
+            <Group>
+                <Image id="art" x="-1260" y="-690" width="4706" height="3425">
+                    <Conditions>
+                        <Not>
+                            <IsEquals key="proximity.options.art_source" value="NONE"/>
+                        </Not>
+                    </Conditions>
+                    <Color>
+                        <Selector>
+                            <Image src="../colors/land">
+                                <Conditions>
+                                    <IsPresent key="proximity.mtg.types.land"/>
+                                    <IsEquals key="proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/$join{colors}">
+                                <Conditions>
+                                    <IsEquals key="one_or_two_colors"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/colorless">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="0"/>
+                                </Conditions>
+                            </Image>
+                            <Image src="../colors/gold"/>
+                        </Selector>
+                    </Color>
+                </Image>
+                <Group id="watermarks">
+                    <CardModifier key="watermark" value="${set}">
+                        <IsEquals key="proximity.options.set_symbol_watermark"/>
+                    </CardModifier>
+                    <Rectangle width="2176" height="2960" color="#08FFFFFF">
+                        <AttributeModifier name="color" value="#40FFFFFF">
+                            <Or>
+                                <IsPresent key="colors.B"/>
+                                <IsPresent key="colors.G"/>
+                            </Or>
+                        </AttributeModifier>
+                        <Mask>
+                            <Selector>
+                                <Image src="${watermark}">
+                                    <Conditions>
+                                        <FileExists src="${watermark}.png"/>
+                                    </Conditions>
+                                </Image>
+                                <SVG src="${watermark}" x="1088" y="2263" width="925" height="672"/>
+                            </Selector>
+                        </Mask>
+                    </Rectangle>
+                    <Conditions>
+                        <IsPresent key="watermark"/>
+                        <Or>
+                            <FileExists src="${watermark}.png"/>
+                            <FileExists src="${watermark}.svg"/>
+                        </Or>
+                    </Conditions>
+                </Group>
+                <Selector>
+                    <Effect name="hsb" saturation="0">
+                        <Conditions>
+                            <IsEquals key="proximity.mtg.color_count" value="0"/>
+                            <Not>
+                                <IsPresent key="proximity.mtg.types.land"/>
+                            </Not>
+                        </Conditions>
+                    </Effect>
+                    <Effect name="hsb" saturation="100">
+                        <Conditions>
+                            <Not>
+                                <And>
+                                    <IsPresent key="proximity.mtg.types.land"/>
+                                    <IsEquals key="proximity.mtg.color_count" value="0"/>
+                                </And>
+                            </Not>
+                        </Conditions>
+                    </Effect>
+                </Selector>
+                <Effect name="blur" radius="30"/>
+                <Image id="art" x="245" y="405" width="1686" height="1227">
+                    <Conditions>
+                        <Not>
+                            <IsEquals key="proximity.options.art_source" value="NONE"/>
+                        </Not>
+                    </Conditions>
+                    <Mask>
+                        <Rectangle x="245" y="405" width="1686" height="1227" color="#FFFFFFFF"/>
+                    </Mask>
+                </Image>
+                <Fork id="frames">
+                    <Fork>
+                        <Fork>
+                            <Selector>
+                                <Image id="legendary">
+                                    <Conditions>
+                                        <IsPresent key="proximity.mtg.types.legendary"/>
+                                    </Conditions>
+                                </Image>
+                                <Image id="nonlegendary"/>
+                            </Selector>
+                            <Branches>
+                                <Branch id="floating">
+                                    <IsEquals key="proximity.options.floating"/>
+                                </Branch>
+                                <Branch id="standard"/>
+                            </Branches>
+                        </Fork>
+                        <Branches>
+                            <Branch id="creature">
+                                <Or>
+                                    <IsPresent key="proximity.mtg.types.creature"/>
+                                    <IsPresent key="proximity.mtg.types.vehicle"/>
+                                </Or>
+                            </Branch>
+                            <Branch id="noncreature"/>
+                        </Branches>
+                    </Fork>
+                    <Branches>
+                        <Branch id="transform">
+                            <Or>
+                                <IsEquals key="layout" value="transform"/>
+                                <IsEquals key="layout" value="meld"/>
+                            </Or>
+                            <IsEquals key="proximity.mtg.front_face"/>
+                        </Branch>
+                        <Branch id="standard"/>
+                    </Branches>
+                </Fork>
+                <Group id="watermarks">
+                    <Selector>
+                        <Image src="../colors/land">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.land"/>
+                            </Conditions>
+                        </Image>
+                        <Image src="../colors/$join{colors}">
+                            <Conditions>
+                                <IsEquals key="one_or_two_colors"/>
+                            </Conditions>
+                        </Image>
+                        <Image src="../colors/colorless">
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.color_count" value="0"/>
+                            </Conditions>
+                        </Image>
+                        <Image src="../colors/gold"/>
+                    </Selector>
+                    <Rectangle width="2176" height="2960" color="#10FFFFFF"/>
+                    <Mask>
+                        <Rectangle width="2176" height="2960" color="#40FFFFFF">
+                            <Mask>
+                                <Selector>
+                                    <Image src="${watermark}">
+                                        <Conditions>
+                                            <FileExists src="${watermark}.png"/>
+                                        </Conditions>
+                                    </Image>
+                                    <SVG src="${watermark}" x="1088" y="2263" width="925" height="672"/>
+                                </Selector>
+                            </Mask>
+                        </Rectangle>
+                    </Mask>
+                    <Conditions>
+                        <IsPresent key="watermark"/>
+                        <Or>
+                            <FileExists src="${watermark}.png"/>
+                            <FileExists src="${watermark}.svg"/>
+                        </Or>
+                    </Conditions>
+                </Group>
+                <Group id="overlays">
+                    <Image src="color indicators/$join{color_indicator}">
+                        <Conditions>
+                            <IsPresent key="color_indicator"/>
+                        </Conditions>
+                    </Image>
+                    <Group id="transform">
+                        <Image id="sun">
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="frame_effects.sunmoondfc"/>
+                                    <IsEquals key="set" value="mid"/>
+                                    <IsEquals key="set" value="vow"/>
+                                </Or>
+                                <IsEquals key="proximity.mtg.front_face"/>
+                            </Conditions>
+                        </Image>
+                        <Image id="moon">
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="frame_effects.sunmoondfc"/>
+                                    <IsEquals key="set" value="mid"/>
+                                    <IsEquals key="set" value="vow"/>
+                                </Or>
+                                <IsEquals key="proximity.mtg.front_face" value="false"/>
+                            </Conditions>
+                        </Image>
+                        <Image id="eldrazi moon">
+                            <Conditions>
+                                <IsPresent key="frame_effects.mooneldrazidfc"/>
+                                <IsEquals key="proximity.mtg.front_face"/>
+                            </Conditions>
+                        </Image>
+                        <Image id="eldrazi">
+                            <Conditions>
+                                <IsPresent key="frame_effects.mooneldrazidfc"/>
+                                <IsEquals key="proximity.mtg.front_face" value="false"/>
+                            </Conditions>
+                        </Image>
+                        <Conditions>
+                            <Or>
+                                <IsEquals key="layout" value="transform"/>
+                                <And>
+                                    <IsEquals key="layout" value="meld"/>
+                                    <IsEquals key="proximity.mtg.front_face"/>
+                                </And>
+                            </Or>
+                        </Conditions>
+                    </Group>
+                </Group>
+                <SquishBox id="title_bar">
+                    <Main id="cost">
+                        <HorizontalLayout x="1935" y="340" alignment="end">
+                            <Spacer width="33" height="10"/>
+                            <Text value="${mana_cost}">
+                                <Style font="NDPMTG" size="115">
+                                    <Shadow color="#000000" dX="-2" dY="7"/>
+                                </Style>
+                            </Text>
+                        </HorizontalLayout>
+                    </Main>
+                    <Flex>
+                        <Text x="251" y="340" value="${name}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                        </Text>
+                    </Flex>
+                </SquishBox>
+                <SquishBox>
+                    <Main id="set_symbol">
+                        <Spacer x="1919" y="1667" width="7" height="145"/>
+                        <Group>
+                            <Selector>
+                                <!-- Certain sets don't use a uniform color palette, so this is a necessary evil -->
+                                <SVG x="1933" y="1731" src="${rarity}/${proximity.options.set_symbol}" width="231" height="118" horizontal_alignment="end">
+                                    <Conditions>
+                                        <FileExists src="${rarity}/${proximity.options.set_symbol}.svg"/>
+                                    </Conditions>
+                                </SVG>
+                                <SVG x="1933" y="1731" src="${proximity.options.set_symbol}" width="231" height="118" horizontal_alignment="end">
+                                    <Conditions>
+                                        <FileExists src="${proximity.options.set_symbol}.svg"/>
+                                    </Conditions>
+                                </SVG>
+                            </Selector>
+                            <CardModifier key="proximity.options.set_symbol" value="pz1">
+                                <Or>
+                                    <Not>
+                                        <IsPresent key="proximity.options.set_symbol"/>
+                                    </Not>
+                                    <Not>
+                                        <FileExists src="${proximity.options.set_symbol}.svg"/>
+                                    </Not>
+                                </Or>
+                            </CardModifier>
+                            <Conditions>
+                                <IsEquals key="proximity.options.show_set_symbol"/>
+                            </Conditions>
+                        </Group>
+                    </Main>
+                    <Flex>
+                        <Text id="back" x="252" y="1763" value="${type_line}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="89" kerning="2"/>
+                        </Text>
+                    </Flex>
+                </SquishBox>
+                <Text id="pt" x="1813" y="2673" alignment="center" value="${power}/${toughness}">
+                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="105"/>
+                    <Conditions>
+                        <Or>
+                            <IsPresent key="proximity.mtg.types.creature"/>
+                            <IsPresent key="proximity.mtg.types.vehicle"/>
+                        </Or>
+                    </Conditions>
+                </Text>
+                <Text id="flipped.power_and_toughness" x="1935" y="2508" alignment="right" value="${proximity.mtg.flipped.power}/${proximity.mtg.flipped.toughness}">
+                    <Style font="Beleren2016-Bold" color="#A0FFFFFF" size="66"/>
+                    <Conditions>
+                        <IsPresent key="layout"/>
+                        <IsEquals key="layout" value="transform"/>
+                        <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature"/>
+                        <IsEquals key="proximity.mtg.front_face"/>
+                    </Conditions>
+                </Text>
+                <Group id="oracle_text">
+                    <VerticalLayout x="265" y="1850" width="1646" height="787" alignment="middle">
+                        <AttributeModifier name="height" value="686">
+                            <IsPresent key="layout"/>
+                            <IsEquals key="layout" value="modal_dfc"/>
+                        </AttributeModifier>
+                        <Text value="$oracle_text{oracle_text}">
+                            <Conditions>
+                                <IsPresent key="oracle_text"/>
+                            </Conditions>
+                        </Text>
+                        <VerticalLayout id="flavor">
+                            <VerticalLayout>
+                                <Spacer id="spacing1" width="7" height="50"/>
+                                <Selector>
+                                    <Image id="bar" x="23" width="1592" height="9" src="../../overlays/flavor_bar">
+                                        <Conditions>
+                                            <IsEquals key="proximity.options.flavor_bar"/>
+                                        </Conditions>
+                                    </Image>
+                                    <Spacer width="7" height="9"/>
+                                </Selector>
+                                <Spacer id="spacing2" width="7" height="50"/>
+                                <Conditions>
+                                    <IsPresent key="oracle_text"/>
+                                    <Not>
+                                        <IsEquals key="oracle_text" value=""/>
+                                    </Not>
+                                </Conditions>
+                            </VerticalLayout>
+                            <Text value="$flavor_text{flavor_text}"/>
+                            <Conditions>
+                                <IsPresent key="flavor_text"/>
+                                <IsEquals key="proximity.options.flavor_text"/>
+                            </Conditions>
+                        </VerticalLayout>
+                    </VerticalLayout>
+                    <Wrap>
+                        <Rectangle x="1635" y="2560" width="354" height="208"/>
+                        <Conditions>
+                            <Or>
+                                <IsPresent key="proximity.mtg.types.creature"/>
+                                <IsPresent key="proximity.mtg.types.vehicle"/>
+                            </Or>
+                        </Conditions>
+                    </Wrap>
+                    <Wrap>
+                        <Rectangle x="1768" y="2428" width="222" height="111"/>
+                        <Conditions>
+                            <IsEquals key="layout" value="transform"/>
+                            <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature"/>
+                            <IsEquals key="proximity.mtg.types.creature" value="false"/>
+                            <IsEquals key="proximity.mtg.front_face"/>
+                        </Conditions>
+                    </Wrap>
+                    <Wrap>
+                        <Rectangle x="1635" y="2560" width="354" height="208"/>
+                        <Rectangle x="1768" y="2428" width="222" height="111"/>
+                        <Conditions>
+                            <IsEquals key="layout" value="transform"/>
+                            <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature"/>
+                            <IsEquals key="proximity.mtg.types.creature"/>
+                            <IsEquals key="proximity.mtg.front_face"/>
+                        </Conditions>
+                    </Wrap>
+                    <Style font="MPlantin" italicFont="MPlantin-Italic" color="#FFFFFF" size="89"/>
+                </Group>
+            </Group>
+        </Selector>
+        <Group id="bottom_text">
+            <HorizontalLayout id="set_lang_and_artist" x="222" y="2785">
+                <Text y="1" value="${set}">
+                    <Style font="Gotham-Medium-Regular" size="45" capitalization="all_caps" kerning="7"/>
+                </Text>
+                <Spacer height="3" width="9"/>
+                <Text value="•">
+                    <Style font="Altone" size="45"/>
+                </Text>
+                <Spacer height="3" width="18"/>
+                <Text id="lang" value="${lang}" y="1">
+                    <Style font="Gotham-Medium-Regular" size="45" capitalization="all_caps" kerning="8"/>
+                </Text>
+                <Spacer height="3" width="18"/>
+                <HorizontalLayout id="artist">
+                    <Text id="brush" y="1" value="a">
+                        <Style font="NDPMTG" size="53"/>
+                    </Text>
+                    <Spacer height="3" width="17"/>
+                    <Text id="artist" value="${artist}">
+                        <Style font="Beleren Small Caps" size="50" kerning="1" color="#FFFFFF"/>
+                    </Text>
+                    <Conditions>
+                        <IsEquals key="proximity.mtg.is_original_two_sided_card" value="false"/>
+                    </Conditions>
+                </HorizontalLayout>
+            </HorizontalLayout>
+            <Group id="disclaimer">
+                <Text x="222" y="2733" value="2022 Custom Proxy">
+                    <Style font="Altone" size="46"/>
+                </Text>
+                <Text value="NOT FOR SALE" x="668" y="2737">
+                    <Style font="Beleren2016-Bold" size="47" kerning="1"/>
+                </Text>
+            </Group>
+            <Selector id="copyright">
+                <Text value="™ &amp; © 2021 Wizards of the Coast" alignment="right" x="1956" y="2790">
+                    <Style font="MPlantin" size="45"/>
+                    <Conditions>
+                        <Or>
+                            <IsPresent key="proximity.types.planeswalker"/>
+                            <IsPresent key="proximity.types.creature"/>
+                            <IsPresent key="proximity.types.vehicle"/>
+                        </Or>
+                    </Conditions>
+                </Text>
+                <Text value="™ &amp; © 2021 Wizards of the Coast" alignment="right" x="1956" y="2740">
+                    <Style font="MPlantin" size="45"/>
+                </Text>
+                <Conditions>
+                    <IsEquals key="proximity.options.copyright"/>
+                </Conditions>
+            </Selector>
+            <Style color="#FFFFFF">
+                <Outline color="#000000" weight="5"/>
+            </Style>
+            <Style color="#FFFFFF"/>
+        </Group>
+    </Layers>
+</Template>

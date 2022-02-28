@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="27.717001"
+   height="32"
+   viewBox="0 0 27.717001 32"
+   id="svg4"
+   sodipodi:docname="ddk.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview66"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="11.505196"
+     inkscape:cx="-0.7387966"
+     inkscape:cy="9.2566869"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs59">
+    <!-- This is the gradient that will actually be used on
+     the cards. The colors themselves will be provided by the
+     template, but the x values, y values, and offsets will be
+     used from the SVG. -->
+    <linearGradient
+       id="rarity"
+       x1="1.4417457"
+       y1="2.9265371"
+       x2="31.223351"
+       y2="2.9265371"
+       gradientTransform="matrix(0.93067516,0,0,1.0744888,-1.3417969,-3.1445312)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop2" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop4" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(241,142,30);stop-opacity:1"
+         id="stop6" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop8" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop10" />
+    </linearGradient>
+    <!-- These gradients are here so that you can visualize
+     what the set symbol would like like in that rarity. The
+     only gradient that matters in the end is the "rarity"
+     gradient. -->
+    <linearGradient
+       id="mythic"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop9" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop11" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(241,142,30);stop-opacity:1"
+         id="stop13" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop15" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(192,55,38);stop-opacity:1"
+         id="stop17" />
+    </linearGradient>
+    <linearGradient
+       id="rare"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop20" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop22" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(211,178,108);stop-opacity:1"
+         id="stop24" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop26" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(146,116,67);stop-opacity:1"
+         id="stop28" />
+    </linearGradient>
+    <linearGradient
+       id="special"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop31" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop33" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(201, 173, 221);stop-opacity:1"
+         id="stop35" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop37" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+         id="stop39" />
+    </linearGradient>
+    <linearGradient
+       id="uncommon"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop42" />
+      <stop
+         offset="0.125"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop44" />
+      <stop
+         offset="0.5"
+         style="stop-color:rgb(196,222,238);stop-opacity:1"
+         id="stop46" />
+      <stop
+         offset="0.875"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop48" />
+      <stop
+         offset="1"
+         style="stop-color:rgb(98,110,119);stop-opacity:1"
+         id="stop50" />
+    </linearGradient>
+    <linearGradient
+       id="common"
+       x1="0"
+       y1="1"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0"
+         style="stop-color:rgb(0,0,0);stop-opacity:1"
+         id="stop53" />
+    </linearGradient>
+    <linearGradient
+       id="rarity-outline"
+       x1="0"
+       y1="1"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         style="stop-color:rgb(0,0,0);stop-opacity:1"
+         id="stop56" />
+    </linearGradient>
+  </defs>
+  <path
+     fill="url(#rarity)"
+     d="m 13.779,31.998 c -0.052,-0.17 -0.074,-0.385 -0.101,-0.675 -0.032,-0.364 -0.07,-0.775 -0.222,-1.207 -0.054,-0.153 -0.164,-0.279 -0.308,-0.354 -0.437,-0.229 -1.018,-0.586 -1.48,-0.943 0.547,-1.01 -0.195,-1.939 -0.688,-2.539 0.146,-0.129 0.319,-0.249 0.488,-0.366 0.375,-0.262 0.763,-0.532 0.938,-0.956 0.084,-0.204 0.057,-0.437 -0.071,-0.617 -0.12,-0.167 -0.274,-0.287 -0.423,-0.403 -0.142,-0.11 -0.255,-0.202 -0.338,-0.307 1.009,-0.57 1.714,-2.054 1.749,-2.619 0.019,-0.318 -0.071,-0.726 -0.575,-0.951 0.025,-0.112 0.052,-0.214 0.079,-0.313 0.128,-0.477 0.248,-0.929 -0.12,-1.67 -0.074,-0.15 -0.203,-0.264 -0.361,-0.32 C 11.945,17.617 10.837,17.392 9.5670001,17.392 8.4880001,17.392 7.5,17.547 6.634,17.853 5.108,18.392 4.735,19.485 4.511,20.138 4.498,20.175 4.484,20.216 4.469,20.257 4.226,19.997 3.891,19.356 3.748,19.085 3.62,18.842 3.5,18.612 3.382,18.435 3.253,18.239 3.122,18.075 3.006,17.93 2.721,17.572 2.604,17.415 2.604,17.109 c 0,-0.193 0.067,-0.276 0.351,-0.544 0.252,-0.239 0.599,-0.567 0.801,-1.111 0.305,-0.825 0.577,-1.235 0.737,-1.41 0.013,0.034 0.026,0.069 0.037,0.1 0.202,0.548 0.54,1.465 1.89,2.2 0.986,0.537 2.1900001,0.541 4.185,0.551 0,0 0.181,0.001 0.182,0.001 0.302,0 0.563,-0.21 0.627,-0.504 0.065,-0.295 -0.086,-0.596 -0.361,-0.721 C 7.782,14.183 6.928,11.03 6.174,8.2479998 5.448,5.569 4.698,2.798 1.62,2.798 1.126,2.798 0.59,2.87 0,3.014 0.035,2.97 0.07,2.93 0.105,2.893 0.68,2.278 1.682,1.897 2.722,1.897 3.484,1.897 4.234,2.101 4.891,2.488 7.286,3.896 8.0940001,6.09 8.8060001,8.0259998 9.4940001,9.8939998 10.142,11.659 12.15,11.841 c 0.019,0.001 0.039,0.003 0.058,0.003 0.177,0 0.347,-0.073 0.469,-0.204 0.135,-0.145 0.196,-0.344 0.164,-0.539 C 12.572,9.4309998 12.935,4.028 13.927,0 c 0.964,3.937 1.062,9.3499998 0.898,11.112 -0.017,0.186 0.047,0.371 0.178,0.506 0.121,0.125 0.288,0.195 0.461,0.195 0.013,0 0.025,-0.001 0.039,-0.001 2.183,-0.133 2.843,-1.9830002 3.541,-3.9410002 C 19.784,5.795 20.623,3.442 23.385,2.133 23.83,1.922 24.327,1.815 24.86,1.815 c 1.063,0 2.148,0.435 2.767,1.106 0.03,0.032 0.06,0.067 0.09,0.104 -0.621,-0.16 -1.181,-0.239 -1.69,-0.239 -2.975,0 -3.648,2.564 -4.36,5.2779998 C 20.922,10.903 20.079,14.12 16.576,15.685 c -0.274,0.122 -0.425,0.417 -0.366,0.711 0.059,0.294 0.312,0.508 0.611,0.515 0.385,0.011 0.745,0.016 1.07,0.016 2.636,0 3.573,-0.351 4.468,-1.041 0.639,-0.494 0.945,-1.118 1.167,-1.574 0.041,-0.083 0.09,-0.184 0.134,-0.264 0.12,0.138 0.323,0.48 0.618,1.321 0.008,0.024 0.018,0.047 0.03,0.07 0.162,0.331 0.399,0.595 0.63,0.849 0.272,0.302 0.507,0.563 0.511,0.816 0.006,0.401 -0.152,0.579 -0.509,0.942 -0.172,0.176 -0.367,0.373 -0.54,0.625 -0.203,0.297 -0.34,0.645 -0.461,0.952 -0.074,0.189 -0.203,0.515 -0.304,0.65 -0.03,-0.072 -0.063,-0.163 -0.091,-0.238 -0.246,-0.679 -0.658,-1.814 -2.45,-2.426 -0.537,-0.183 -1.173,-0.271 -1.946,-0.271 -0.867,0 -1.749,0.111 -2.527,0.209 -0.376,0.047 -0.731,0.092 -1.025,0.116 -0.257,0.02 -0.476,0.192 -0.558,0.437 -0.195,0.586 -0.125,1.113 -0.068,1.539 0.023,0.175 0.058,0.439 0.027,0.508 v 0 c -10e-4,0 -0.03,0.027 -0.119,0.063 -0.328,0.129 -0.492,0.498 -0.366,0.827 0.352,0.916 0.878,1.335 1.342,1.706 0.177,0.141 0.348,0.278 0.514,0.442 -0.046,0.011 -0.094,0.012 -0.151,0.012 -0.108,0 -0.252,-0.015 -0.439,-0.045 -0.034,-0.006 -0.069,-0.008 -0.103,-0.008 -0.153,0 -0.303,0.055 -0.421,0.157 -0.144,0.124 -0.225,0.307 -0.221,0.498 0.059,2.91 0.131,6.472 -1.256,8.201 z"
+     id="path63"
+     style="fill:url(#rarity)" />
+</svg>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="125.63086"
+   height="120.9435"
+   viewBox="0 0 125.63086 120.9435"
+   version="1.1"
+   xml:space="preserve"
+   style="clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:8"
+   id="svg14"
+   sodipodi:docname="c20.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview67"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="4.8175756"
+   inkscape:cx="47.430496"
+   inkscape:cy="54.487987"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg14" />
+  <defs
+   id="defs59">
+    <!-- This is the gradient that will actually be used on
+     the cards. The colors themselves will be provided by the
+     template, but the x values, y values, and offsets will be
+     used from the SVG. -->
+    <linearGradient
+   id="rarity"
+   x1="2.0494478"
+   y1="2.1222301"
+   x2="121.14296"
+   y2="2.1222301"
+   gradientTransform="scale(1.0197869,0.98059706)"
+   gradientUnits="userSpaceOnUse">
+      <stop
+   offset="0"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop2" />
+      <stop
+   offset="0.125"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop4" />
+      <stop
+   offset="0.5"
+   style="stop-color:rgb(241,142,30);stop-opacity:1"
+   id="stop6" />
+      <stop
+   offset="0.875"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop8" />
+      <stop
+   offset="1"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop10" />
+    </linearGradient>
+    <!-- These gradients are here so that you can visualize
+     what the set symbol would like like in that rarity. The
+     only gradient that matters in the end is the "rarity"
+     gradient. -->
+    <linearGradient
+   id="mythic"
+   x1="0"
+   y1="1"
+   x2="1"
+   y2="0">
+      <stop
+   offset="0"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop9" />
+      <stop
+   offset="0.125"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop11" />
+      <stop
+   offset="0.5"
+   style="stop-color:rgb(241,142,30);stop-opacity:1"
+   id="stop13" />
+      <stop
+   offset="0.875"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop15" />
+      <stop
+   offset="1"
+   style="stop-color:rgb(192,55,38);stop-opacity:1"
+   id="stop17" />
+    </linearGradient>
+    <linearGradient
+   id="rare"
+   x1="0"
+   y1="1"
+   x2="1"
+   y2="0">
+      <stop
+   offset="0"
+   style="stop-color:rgb(146,116,67);stop-opacity:1"
+   id="stop20" />
+      <stop
+   offset="0.125"
+   style="stop-color:rgb(146,116,67);stop-opacity:1"
+   id="stop22" />
+      <stop
+   offset="0.5"
+   style="stop-color:rgb(211,178,108);stop-opacity:1"
+   id="stop24" />
+      <stop
+   offset="0.875"
+   style="stop-color:rgb(146,116,67);stop-opacity:1"
+   id="stop26" />
+      <stop
+   offset="1"
+   style="stop-color:rgb(146,116,67);stop-opacity:1"
+   id="stop28" />
+    </linearGradient>
+    <linearGradient
+   id="special"
+   x1="0"
+   y1="1"
+   x2="1"
+   y2="0">
+      <stop
+   offset="0"
+   style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+   id="stop31" />
+      <stop
+   offset="0.125"
+   style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+   id="stop33" />
+      <stop
+   offset="0.5"
+   style="stop-color:rgb(201, 173, 221);stop-opacity:1"
+   id="stop35" />
+      <stop
+   offset="0.875"
+   style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+   id="stop37" />
+      <stop
+   offset="1"
+   style="stop-color:rgb(76, 56, 106);stop-opacity:1"
+   id="stop39" />
+    </linearGradient>
+    <linearGradient
+   id="uncommon"
+   x1="0"
+   y1="1"
+   x2="1"
+   y2="0">
+      <stop
+   offset="0"
+   style="stop-color:rgb(98,110,119);stop-opacity:1"
+   id="stop42" />
+      <stop
+   offset="0.125"
+   style="stop-color:rgb(98,110,119);stop-opacity:1"
+   id="stop44" />
+      <stop
+   offset="0.5"
+   style="stop-color:rgb(196,222,238);stop-opacity:1"
+   id="stop46" />
+      <stop
+   offset="0.875"
+   style="stop-color:rgb(98,110,119);stop-opacity:1"
+   id="stop48" />
+      <stop
+   offset="1"
+   style="stop-color:rgb(98,110,119);stop-opacity:1"
+   id="stop50" />
+    </linearGradient>
+    <linearGradient
+   id="common"
+   x1="0"
+   y1="1"
+   x2="1"
+   y2="0">
+      <stop
+   offset="0"
+   style="stop-color:rgb(0,0,0);stop-opacity:1"
+   id="stop53" />
+    </linearGradient>
+    <linearGradient
+   id="rarity-outline"
+   x1="0"
+   y1="1"
+   x2="0"
+   y2="1">
+      <stop
+   offset="0"
+   style="stop-color:rgb(0,0,0);stop-opacity:1"
+   id="stop56" />
+    </linearGradient>
+  </defs>
+    <path
+   id="path61"
+   style="fill:#000000"
+   d="m 52.390625,0.01380946 c -4.44,-0.22 -10.240391,2.20109374 -16.150391,6.37109374 -8.39,5.9200008 -17.129531,15.2884378 -22.519531,24.3984378 -0.99,1.67 -2.721015,2.990235 -4.2910155,2.990235 -3.25,0 -5.7089844,-3.21875 -5.7089844,-3.21875 L 0,25.894669 v 13.330078 c 0,2.86 2.2109375,7.148594 5.7109375,11.808594 7.4199995,9.88 20.3892965,22.029922 24.5292965,26.169922 0.36,0.36 0.630391,0.751406 0.650391,1.191406 0.02,0.42 -0.230391,0.820235 -0.650391,1.240235 -0.38,0.38 -0.949375,0.419531 -1.609375,0.269531 -1.2,-0.28 -2.571797,-1.13125 -4.091797,-2.53125 l -3.019531,-2.798828 -0.458984,4.099609 c -0.3,2.67 0.289141,5.649766 1.619141,8.759766 1.84,4.29 5.100546,8.880703 9.060546,13.220708 6.81,7.49 15.680625,14.28023 22.640625,17.74023 3.24,1.61 6.119766,2.49883 8.259766,2.54883 h 0.04883 0.25 0.02148 c 2.159999,-0.05 5.049062,-0.93883 8.289062,-2.54883 6.96,-3.46 15.830625,-10.25023 22.640625,-17.74023 3.96,-4.340005 7.218598,-8.930708 9.058598,-13.220708 1.33,-3.11 1.92109,-6.089766 1.62109,-8.759766 l -0.46093,-4.099609 -3.01954,2.798828 c -1.509999,1.4 -2.889843,2.25125 -4.089843,2.53125 -0.66,0.15 -1.229375,0.110469 -1.609375,-0.269531 -0.42,-0.42 -0.670391,-0.820235 -0.650391,-1.240235 0.02,-0.44 0.290391,-0.831406 0.650391,-1.191406 4.14,-4.14 17.109298,-16.289922 24.529298,-26.169922 3.5,-4.66 5.71094,-8.948594 5.71094,-11.808594 V 25.894669 l -3.7207,4.660157 c 0,0 -2.46071,3.21875 -5.72071,3.21875 -1.56,-10e-7 -3.28929,-1.320235 -4.27929,-2.990235 -5.39,-9.11 -14.129538,-18.478437 -22.519538,-24.3984378 -5.91,-4.17 -11.710391,-6.59109375 -16.150391,-6.37109374 L 71.259766,0.11341883 V 15.683732 c 0,4.67 -3.779454,8.451172 -8.439454,8.451172 -4.67,0 -8.451171,-3.781172 -8.451171,-8.451172 V 0.11341883 Z M 41.853516,18.662247 l 0.230468,1.361329 c 0.77,4.5432 2.875863,8.178531 5.976563,11.269531 l 0.787109,0.785156 -0.974609,0.537109 c -9.1067,5.0111 -15.959778,12.261732 -21.392578,21.019532 l -1.445313,2.328125 -0.09961,-2.738282 c -0.487799,-13.4333 4.32896,-24.970209 15.81836,-33.724609 z m 41.923828,0 1.099609,0.837891 c 11.4894,8.7544 16.306157,20.291309 15.818357,33.724609 l -0.0996,2.738282 -1.445309,-2.328125 c -5.4328,-8.7578 -12.285777,-16.008432 -21.392579,-21.019532 l -0.974609,-0.537109 0.787109,-0.785156 c 3.100702,-3.091 5.206563,-6.726332 5.976563,-11.269531 z m -20.957032,19.277344 0.341797,0.152344 c 5.014,2.2537 9.325397,6.132381 13.216797,10.925781 l 0.382813,0.470703 -0.330078,0.509766 c -6.0483,9.3194 -9.943982,20.159559 -12.800782,31.755859 l -0.808593,3.285156 -0.8125,-3.285156 c -2.8668,-11.5967 -6.762347,-22.436459 -12.810547,-31.755859 l -0.330078,-0.509766 0.382812,-0.470703 c 3.891,-4.7928 8.191863,-8.671981 13.226563,-10.925781 z m -22.166015,30.011719 1.341797,2.24414 c 6.623001,11.067541 5.992555,22.427055 -1.126953,33.6211 -2.117212,-1.89557 -4.167492,-3.89818 -6.048829,-5.962896 -3.62,-3.97 -6.630546,-8.140547 -8.310546,-12.060547 -0.38,-0.9 -0.689922,-1.768907 -0.919922,-2.628907 8.449788,3.161835 14.298213,-6.306822 14.857422,-12.605468 z m 44.322265,0 0.207032,2.607422 c 0.770191,7.515857 7.595601,15.95828 14.855466,12.605468 -0.229998,0.86 -0.539685,1.728907 -0.929685,2.628907 -1.67,3.92 -4.678828,8.090547 -8.298828,12.060547 -1.881427,2.064815 -3.933461,4.067246 -6.050781,5.962896 -7.127445,-11.194244 -7.74777,-22.55401 -1.125,-33.6211 z"
+   sodipodi:nodetypes="cccsccscscsccccccccccccccccccscscsccsccccsssccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+    
+    
+    
+</svg>

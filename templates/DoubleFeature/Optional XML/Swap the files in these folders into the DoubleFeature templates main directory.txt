@@ -1,0 +1,1 @@
+Swap the files in these folders into the DoubleFeature templates main directory to achieve your desired look

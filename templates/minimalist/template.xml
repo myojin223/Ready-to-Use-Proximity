@@ -1,0 +1,991 @@
+<?xml version="1.0"?>
+
+<Template name="BlackExtented" author="IshanCurse" width="3288" height="4488" proximity_version="0.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Proximity-Engine/Proximity/0.5.0/template.xsd">
+    <Options>
+        <Enumeration id="border" default="black">
+            <EnumerationValue value="black" />
+            <EnumerationValue value="gold" id="gold" />
+            <EnumerationValue value="silver" />
+            <EnumerationValue value="none" />
+        </Enumeration>
+        <ToggleOption id="bottom_text_Outline" default="false" />
+        <ToggleOption id="copyright" default="true" />
+        <ToggleOption id="flavor_text" default="true" />
+        <ToggleOption id="flavor_bar" default="true" />
+        <ToggleOption id="show_set_symbol" default="true" />
+        <StringOption id="set_symbol" />
+        <StringOption id="watermark" />
+    </Options>
+    <Imports>
+        <Import src="symbols" />
+        <Import src="styles" />
+    </Imports>
+    <Plugins>
+        <Import repository="https://hephaestus.dev/release" group="dev.hephaestus" artifact="proximity-mtg" version=">=1.0.0" />
+    </Plugins>
+    <ConditionDefinitions>
+        <Definition name="colorless_artifact">
+            <IsPresent key="proximity.mtg.types.artifact" />
+            <IsEquals key="proximity.mtg.color_count" value="0" />
+        </Definition>
+        <Definition name="one_or_two_colors">
+            <Range key="proximity.mtg.color_count" min="1" max="2" />
+        </Definition>
+    </ConditionDefinitions>
+    <Resources>
+        <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0" />
+        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.0" />
+    </Resources>
+    <Layers>
+        <Selector>
+            <Image id="cardback">
+                <Conditions>
+                    <IsPresent key="proximity.options.use_card_back" />
+                    <IsEquals key="proximity.options.use_card_back" />
+                    <IsPresent key="proximity.mtg.is_card_back" />
+                    <IsEquals key="proximity.mtg.is_card_back" />
+                </Conditions>
+            </Image>
+            <Group>
+                <Image id="art" x="0" y="0" width="3288" height="4488" url="${image_uris.art_crop}">
+                    <Conditions>
+                        <Not>
+                            <IsEquals key="proximity.options.art_source" value="NONE" />
+                        </Not>
+                    </Conditions>
+                </Image>
+                <Selector id="backgrounds">
+                    <Selector id="nyx">
+                        <Image id="artifact">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.artifact" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colorless">
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.color_count" value="0" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colored" src="$join{colors}">
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.color_count" value="1" />
+                            </Conditions>
+                        </Image>
+                        <Image id="gold" />
+                        <Conditions>
+                            <IsPresent key="frame_effects.nyxtouched" />
+                        </Conditions>
+                    </Selector>
+                    <Selector id="snow">
+                        <Image id="artifact">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.artifact" />
+                                <IsPresent key="proximity.mtg.types.land" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="land">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.land" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colored" src="$join{colors}">
+                            <Conditions>
+                                <Or>
+                                    <IsEquals key="proximity.mtg.color_count" value="1" />
+                                </Or>
+                            </Conditions>
+                        </Image>
+                        <Image id="gold">
+                            <Conditions>
+                                <Range key="proximity.mtg.color_count" min="2" />
+                            </Conditions>
+                        </Image>
+                        <Conditions>
+                            <IsPresent key="proximity.mtg.types.snow" />
+                        </Conditions>
+                    </Selector>
+                    <Selector id="standard">
+                        <Image id="vehicle">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.vehicle" />
+                            </Conditions>
+                        </Image>
+                        <Image id="artifact">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.artifact" />
+                                <IsPresent key="proximity.mtg.types.land" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="land">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.land" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colored" src="$join{colors}">
+                            <Conditions>
+                                <Or>
+                                    <IsEquals key="proximity.mtg.color_count" value="1" />
+                                    <And>
+                                        <IsEquals key="proximity.mtg.color_count" value="2" />
+                                        <IsEquals key="proximity.mtg.hybrid" />
+                                    </And>
+                                </Or>
+                            </Conditions>
+                        </Image>
+                        <Image id="gold">
+                            <Conditions>
+                                <Range key="proximity.mtg.color_count" min="2" />
+                            </Conditions>
+                        </Image>
+                    </Selector>
+                    <Conditions>
+                        <Not>
+                            <IsEquals key="proximity.options.border" value="none" />
+                        </Not>
+                    </Conditions>
+                </Selector>
+                <Selector id="shadows">
+                    <Image id="legendary">
+                        <Conditions>
+                            <IsPresent key="proximity.mtg.types.legendary" />
+                        </Conditions>
+                    </Image>
+                    <Image id="mdfc">
+                        <Conditions>
+                            <IsEquals key="layout" value="modal_dfc" />
+                        </Conditions>
+                    </Image>
+                    <Selector id="transform">
+                        <Image id="front">
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Conditions>
+                        </Image>
+                        <Image id="back" />
+                        <Conditions>
+                            <IsEquals key="layout" value="transform" />
+                        </Conditions>
+                    </Selector>
+                    <Image id="normal" />
+                </Selector>
+                <Selector id="pinlines">
+                    <Fork id="modal">
+                        <Fork>
+                            <Selector>
+                                <Image id="artifact">
+                                    <Conditions>
+                                        <IsEquals key="colorless_artifact" />
+                                        <IsPresent key="proximity.mtg.types.land" value="false" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colorless">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colored" src="$join{colors}">
+                                    <Conditions>
+                                        <IsEquals key="one_or_two_colors" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="gold" />
+                            </Selector>
+                            <Branches>
+                                <Branch id="land">
+                                    <IsPresent key="proximity.mtg.types.land" />
+                                </Branch>
+                                <Branch id="standard" />
+                            </Branches>
+                        </Fork>
+                        <Branches>
+                            <Branch id="front">
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Branch>
+                            <Branch id="back">
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Branch>
+                        </Branches>
+                        <Conditions>
+                            <IsEquals key="layout" value="modal_dfc" />
+                        </Conditions>
+                    </Fork>
+                    <Fork id="transform">
+                        <Selector>
+                            <Image id="artifact">
+                                <Conditions>
+                                    <IsEquals key="colorless_artifact" />
+                                    <IsPresent key="proximity.mtg.types.land" value="false" />
+                                </Conditions>
+                            </Image>
+                            <Image id="colorless">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                </Conditions>
+                            </Image>
+                            <Image id="colored" src="$join{colors}">
+                                <Conditions>
+                                    <IsEquals key="one_or_two_colors" />
+                                </Conditions>
+                            </Image>
+                            <Image id="gold" />
+                        </Selector>
+                        <Branches>
+                            <Branch id="front">
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Branch>
+                            <Branch id="back">
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Branch>
+                        </Branches>
+                        <Conditions>
+                            <IsEquals key="layout" value="transform" />
+                        </Conditions>
+                    </Fork>
+                    <Image id="miracle" src="miracle/$join{colors}">
+                        <Conditions>
+                            <IsPresent key="frame_effects.miracle" />
+                            <IsEquals key="proximity.mtg.color_count" value="1" />
+                        </Conditions>
+                    </Image>
+                    <Selector id="mutate">
+                        <Image id="colorless">
+                            <Conditions>
+                                <IsEquals key="colorless_artifact" />
+                                <IsPresent key="proximity.mtg.types.land" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colored" src="$join{colors}">
+                            <Conditions>
+                                <IsEquals key="one_or_two_colors" />
+                            </Conditions>
+                        </Image>
+                        <Image id="gold" />
+                        <Conditions>
+                            <IsPresent key="keywords.mutate" />
+                        </Conditions>
+                    </Selector>
+                    <Fork id="standard">
+                        <Fork>
+                            <Selector>
+                                <Image id="artifact">
+                                    <Conditions>
+                                        <IsEquals key="colorless_artifact" />
+                                        <IsPresent key="proximity.mtg.types.land" value="false" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colorless">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colored" src="$join{colors}">
+                                    <Conditions>
+                                        <IsEquals key="one_or_two_colors" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="gold" />
+                            </Selector>
+                            <Branches>
+                                <Branch id="land">
+                                    <IsPresent key="proximity.mtg.types.land" />
+                                </Branch>
+                                <Branch id="standard" />
+                            </Branches>
+                        </Fork>
+                        <Branches>
+                            <Branch id="snow">
+                                <IsPresent key="proximity.mtg.types.snow" />
+                            </Branch>
+                            <Branch id="standard" />
+                        </Branches>
+                    </Fork>
+                </Selector>
+                <Selector id="border">
+                    <Selector id="mdfc">
+                        <Image id="standard">
+                        </Image>
+                    </Selector>
+                    <Selector id="transform">
+                        <Image id="standard">
+                        </Image>
+                    </Selector>
+                    <Selector id="standard">
+                        <Image id="standard">
+                        </Image>
+                    </Selector>
+                    <Conditions>
+                        <Not>
+                            <IsEquals key="proximity.options.border" value="none"/>
+                        </Not>
+                    </Conditions>
+                </Selector>
+                <Fork id="crowns">
+                    <Selector>
+                        <Image id="colored" src="$join{colors}">
+                            <Conditions>
+                                <IsEquals key="one_or_two_colors" />
+                            </Conditions>
+                        </Image>
+                        <Image id="artifact">
+                            <Conditions>
+                                <IsEquals key="colorless_artifact" />
+                                <IsPresent key="proximity.mtg.types.land" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colorless">
+                            <Conditions>
+                                <Or>
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    <And>
+                                        <IsEquals key="proximity.mtg.color_count" value="2" />
+                                        <IsEquals key="proximity.mtg.hybrid" />
+                                    </And>
+                                </Or>
+                                <Not>
+                                    <IsPresent key="proximity.mtg.types.land" />
+                                </Not>
+                            </Conditions>
+                        </Image>
+                        <Image id="land">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.land" />
+                            </Conditions>
+                        </Image>
+                        <Image id="gold" />
+                    </Selector>
+                    <Branches>
+                        <Branch id="companion">
+                            <IsPresent key="frame_effects.companion" />
+                        </Branch>
+                        <Branch id="legendary">
+                            <IsPresent key="proximity.mtg.types.legendary" />
+                        </Branch>
+                    </Branches>
+                </Fork>
+                <Selector id="crowns.companion.gems">
+                    <Image id="monocolored" src="$join{colors}">
+                        <Conditions>
+                            <IsEquals key="proximity.mtg.color_count" value="1" />
+                        </Conditions>
+                    </Image>
+                    <Image id="artifact">
+                        <Conditions>
+                            <IsEquals key="colorless_artifact" />
+                            <IsPresent key="proximity.mtg.types.land" value="false" />
+                        </Conditions>
+                    </Image>
+                    <Image id="colorless">
+                        <Conditions>
+                            <Or>
+                                <IsEquals key="proximity.mtg.color_count" value="0" />
+                                <And>
+                                    <IsEquals key="proximity.mtg.color_count" value="2" />
+                                    <IsEquals key="proximity.mtg.hybrid" />
+                                </And>
+                            </Or>
+                        </Conditions>
+                    </Image>
+                    <Image id="gold" />
+                    <Conditions>
+                        <IsPresent key="frame_effects.companion" />
+                    </Conditions>
+                </Selector>
+                <Selector id="plates">
+                    <Fork id="mdfc">
+                        <Selector>
+                            <Image id="monocolored" src="$join{colors}">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="1" />
+                                </Conditions>
+                            </Image>
+                            <Image id="artifact">
+                                <Conditions>
+                                    <IsEquals key="colorless_artifact" />
+                                    <IsPresent key="proximity.mtg.types.land" value="false" />
+                                </Conditions>
+                            </Image>
+                            <Image id="colorless">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    <Not>
+                                        <IsPresent key="proximity.mtg.types.land" />
+                                    </Not>
+                                </Conditions>
+                            </Image>
+                            <Image id="hybrid">
+                                <Conditions>
+                                    <Or>
+                                        <And>
+                                            <IsEquals key="proximity.mtg.color_count" value="2" />
+                                            <IsEquals key="proximity.mtg.hybrid" />
+                                        </And>
+                                        <And>
+                                            <IsEquals key="proximity.mtg.color_count" value="0" />
+                                            <IsPresent key="proximity.mtg.types.land" />
+                                        </And>
+                                    </Or>
+                                </Conditions>
+                            </Image>
+                            <Image id="gold" />
+                        </Selector>
+                        <Branches>
+                            <Branch id="front">
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Branch>
+                            <Branch id="back">
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Branch>
+                        </Branches>
+                        <Conditions>
+                            <Or>
+                                <IsEquals key="layout" value="modal_dfc" />
+                                <IsEquals key="layout" value="transform" />
+                            </Or>
+                        </Conditions>
+                    </Fork>
+                    <Image id="miracle" src="miracle/$join{colors}">
+                        <Conditions>
+                            <IsEquals key="proximity.mtg.color_count" value="1" />
+                            <IsPresent key="frame_effects" />
+                            <IsPresent key="frame_effects.miracle" />
+                        </Conditions>
+                    </Image>
+                    <Fork id="standard">
+                        <Selector>
+                            <Image id="monocolored" src="$join{colors}">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="1" />
+                                </Conditions>
+                            </Image>
+                            <Image id="artifact">
+                                <Conditions>
+                                    <IsEquals key="colorless_artifact" />
+                                    <IsPresent key="proximity.mtg.types.land" value="false" />
+                                    <IsPresent key="proximity.mtg.types.snow" value="false" />
+                                </Conditions>
+                            </Image>
+                            <Image id="colorless">
+                                <Conditions>
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    <Not>
+                                        <IsPresent key="proximity.mtg.types.land" />
+                                    </Not>
+                                </Conditions>
+                            </Image>
+                            <Selector>
+                                <Image id="colorless">
+                                    <Conditions>
+                                        <IsPresent key="proximity.mtg.types.snow" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="hybrid" />
+                                <Conditions>
+                                    <Or>
+                                        <And>
+                                            <IsEquals key="proximity.mtg.color_count" value="2" />
+                                            <IsEquals key="proximity.mtg.hybrid" />
+                                        </And>
+                                        <And>
+                                            <Or>
+                                                <IsEquals key="proximity.mtg.color_count" value="0" />
+                                                <IsEquals key="proximity.mtg.color_count" value="2" />
+                                            </Or>
+                                            <IsPresent key="proximity.mtg.types.land" />
+                                        </And>
+                                    </Or>
+                                </Conditions>
+                            </Selector>
+                            <Image id="land">
+                                <Conditions>
+                                    <IsPresent key="proximity.mtg.types.land" />
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                </Conditions>
+                            </Image>
+                            <Image id="gold" />
+                        </Selector>
+                        <Branches>
+                            <Branch id="snow">
+                                <IsPresent key="proximity.mtg.types.snow" />
+                            </Branch>
+                            <Branch id="standard" />
+                        </Branches>
+                    </Fork>
+                </Selector>
+                <SquishBox id="title_bar">
+                    <Main id="cost">
+                        <HorizontalLayout x="225" y="2700" alignment="start">
+                            <Spacer width="50" height="15" />
+                            <Text value="${mana_cost}">
+                                <Style font="NDPMTG" size="175">
+                                    <Shadow color="#000000" dX="-4" dY="11" />
+                                </Style>
+                            </Text>
+                        </HorizontalLayout>
+                    </Main>
+                    <Flex>
+                        <Selector id="name">
+                            <Selector id="dfc">
+                                <Text x="285" y="2875" value="${name}">
+                                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="160" />
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.front_face" />
+                                    </Conditions>
+                                </Text>
+                                <Text x="285" y="2875" value="${name}">
+                                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="160" />
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.front_face" value="false" />
+                                    </Conditions>
+                                </Text>
+                                <Conditions>
+                                    <IsPresent key="layout" />
+                                    <Or>
+                                        <IsEquals key="layout" value="modal_dfc" />
+                                        <IsEquals key="layout" value="transform" />
+                                    </Or>
+                                </Conditions>
+                            </Selector>
+                            <Text x="285" y="2875" value="${name}">
+                                <Style font="Beleren2016-Bold" color="#FFFFFF" size="160" />
+                            </Text>
+                        </Selector>
+                    </Flex>
+                </SquishBox>
+                <Text id="flipped.power_and_toughness" x="2925" y="3790" alignment="right" value="${proximity.flipped.power}/${proximity.flipped.toughness}">
+                    <Style font="Beleren2016-Bold" color="#494949" size="100" />
+                    <Conditions>
+                        <IsPresent key="layout" />
+                        <IsEquals key="layout" value="transform" />
+                        <IsPresent key="proximity.mtg.flipped.proximity.types.creature" />
+                        <IsEquals key="proximity.mtg.front_face" />
+                    </Conditions>
+                </Text>
+                <SquishBox>
+                    <Main id="set_symbol">
+                        <Spacer x="2900" y="2940" width="10" height="220" />
+                        <Group>
+                            <Selector>
+                                <!-- Certain sets don't use a uniform color palette, so this is a necessary evil -->
+                                <SVG x="2922" y="2940" src="${rarity}/${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                    <Conditions>
+                                        <FileExists src="${rarity}/${proximity.options.set_symbol}.svg" />
+                                    </Conditions>
+                                </SVG>
+                                <SVG x="2922" y="2940" src="${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                    <Conditions>
+                                        <FileExists src="${proximity.options.set_symbol}.svg" />
+                                    </Conditions>
+                                </SVG>
+                            </Selector>
+                            <CardModifier key="proximity.options.set_symbol" value="pz1">
+                                <Or>
+                                    <Not>
+                                        <IsPresent key="proximity.options.set_symbol" />
+                                    </Not>
+                                    <Not>
+                                        <FileExists src="${proximity.options.set_symbol}.svg" />
+                                    </Not>
+                                </Or>
+                            </CardModifier>
+                            <Conditions>
+                                <IsEquals key="proximity.options.show_set_symbol" />
+                            </Conditions>
+                        </Group>
+                    </Main>
+                    <Flex>
+                        <Selector id="types">
+                            <Text id="back" x="286" y="3010" value="${type_line}">
+                                <AttributeModifier name="x" value="531">
+                                    <IsPresent key="color_indicator" />
+                                    <FileExists src="../../overlays/color_indicators/$join{color_indicator}.png" />
+                                </AttributeModifier>
+                            </Text>
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="135" kerning="2" />
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="135" kerning="2">
+                                <Conditions>
+                                    <IsPresent key="layout" />
+                                    <Or>
+                                        <IsEquals key="layout" value="modal_dfc" />
+                                        <IsEquals key="layout" value="transform" />
+                                    </Or>
+                                    <IsEquals key="proximity.mtg.front_face" value="false" />
+                                </Conditions>
+                            </Style>
+                        </Selector>
+                    </Flex>
+                </SquishBox>
+                <Image src="overlays/color_indicators/$join{color_indicator}">
+                    <Conditions>
+                        <IsPresent key="color_indicator" />
+                        <FileExists src="../../overlays/color_indicators/$join{color_indicator}.png" />
+                    </Conditions>
+                </Image>
+                <Group id="pt">
+                    <Selector>
+                        <Image id="vehicle">
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.vehicle" />
+                            </Conditions>
+                        </Image>
+                        <Image id="monocolored" src="$join{colors}">
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.color_count" value="1" />
+                            </Conditions>
+                        </Image>
+                        <Image id="artifact">
+                            <Conditions>
+                                <IsEquals key="colorless_artifact" />
+                                <IsPresent key="proximity.mtg.types.land" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="colorless">
+                            <Conditions>
+                                <Or>
+                                    <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    <And>
+                                        <IsEquals key="proximity.mtg.color_count" value="2" />
+                                        <IsEquals key="proximity.mtg.hybrid" />
+                                    </And>
+                                </Or>
+                            </Conditions>
+                        </Image>
+                        <Image id="gold" />
+                    </Selector>
+                    <Selector>
+                        <Text id="vehicle" x="2740" y="4062" alignment="center" value="${power}/${toughness}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="160" />
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.vehicle" />
+                            </Conditions>
+                        </Text>
+                        <Text id="creature" x="2740" y="4062" alignment="center" value="${power}/${toughness}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="160" />
+                            <Conditions>
+                                <IsPresent key="proximity.mtg.types.creature" />
+                            </Conditions>
+                        </Text>
+                    </Selector>
+                    <Conditions>
+                        <Or>
+                            <IsPresent key="proximity.mtg.types.creature" />
+                            <IsPresent key="proximity.mtg.types.vehicle" />
+                        </Or>
+                    </Conditions>
+                </Group>
+                <Effect id="watermarks" name="brightness" amount="-15%">
+                    <CardModifier key="watermark" value="${proximity.options.watermark}">
+                        <IsPresent key="proximity.options.watermark" />
+                    </CardModifier>
+                    <Mask>
+                        <Selector>
+                            <Image src="${watermark}">
+                                <Conditions>
+                                    <FileExists src="${watermark}.png" />
+                                </Conditions>
+                            </Image>
+                            <SVG src="${watermark}" x="1644" y="3490" width="1398" height="1015">
+                                <Conditions>
+                                    <FileExists src="${watermark}.svg" />
+                                </Conditions>
+                            </SVG>
+                        </Selector>
+                    </Mask>
+                    <Conditions>
+                        <IsPresent key="watermark" />
+                        <Or>
+                            <FileExists src="${watermark}.svg" />
+                            <FileExists src="${watermark}.png" />
+                        </Or>
+                    </Conditions>
+                </Effect>
+                <Group id="oracle_text">
+                    <Text id="mutate" value="$oracle_text{proximity.util.mutate_text}" x="400" y="3080" width="2488" height="500">
+                        <Conditions>
+                            <IsPresent key="keywords.mutate" />
+                        </Conditions>
+                    </Text>
+                    <VerticalLayout x="400" y="3105" width="2488" height="900" alignment="middle">
+                        <AttributeModifier name="height" value="1037">
+                            <IsPresent key="layout" />
+                            <IsEquals key="layout" value="modal_dfc" />
+                            <Not>
+                                <IsPresent key="keywords.mutate" />
+                            </Not>
+                        </AttributeModifier>
+                        <AttributeModifier name="height" value="642">
+                            <Not>
+                                <And>
+                                    <IsPresent key="layout" />
+                                    <IsEquals key="layout" value="modal_dfc" />
+                                </And>
+                            </Not>
+                            <IsPresent key="keywords.mutate" />
+                        </AttributeModifier>
+                        <AttributeModifier name="height" value="302">
+                            <IsPresent key="layout" />
+                            <IsEquals key="layout" value="modal_dfc" />
+                            <IsPresent key="keywords.mutate" />
+                        </AttributeModifier>
+                        <AttributeModifier name="y" value="3342">
+                            <IsPresent key="keywords.mutate" />
+                        </AttributeModifier>
+                        <Text value="$oracle_text{oracle_text}">
+                            <Conditions>
+                                <IsPresent key="oracle_text" />
+                            </Conditions>
+                        </Text>
+                        <VerticalLayout id="flavor">
+                            <VerticalLayout>
+                                <Spacer id="spacing1" width="10" height="75" />
+                                <Selector>
+                                    <Image id="bar" x="36" src="../../overlays/flavor_bar">
+                                        <Conditions>
+                                            <IsEquals key="proximity.options.flavor_bar" />
+                                        </Conditions>
+                                    </Image>
+                                    <Spacer width="10" height="14" />
+                                </Selector>
+                                <Spacer id="spacing2" width="10" height="65" />
+                                <Conditions>
+                                    <IsPresent key="oracle_text" />
+                                    <Not>
+                                        <IsEquals key="oracle_text" value="" />
+                                    </Not>
+                                </Conditions>
+                            </VerticalLayout>
+                            <Text value="$flavor_text{flavor_text}" />
+                            <Conditions>
+                                <IsPresent key="flavor_text" />
+                                <IsEquals key="proximity.options.flavor_text" />
+                            </Conditions>
+                        </VerticalLayout>
+                    </VerticalLayout>
+                    <Wrap>
+                        <Rectangle x="2472" y="3869" width="535" height="315" />
+                        <Conditions>
+                            <Or>
+                                <IsPresent key="proximity.mtg.types.creature" />
+                                <IsPresent key="proximity.mtg.types.vehicle" />
+                            </Or>
+                        </Conditions>
+                    </Wrap>
+                    <Wrap>
+                        <Rectangle x="2672" y="3669" width="336" height="168" />
+                        <Conditions>
+                            <IsEquals key="layout" value="transform" />
+                            <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature" />
+                        </Conditions>
+                    </Wrap>
+                    <Wrap>
+                        <Rectangle x="2472" y="3869" width="535" height="315" />
+                        <Rectangle x="2672" y="3669" width="336" height="168" />
+                        <Conditions>
+                            <IsEquals key="layout" value="transform" />
+                            <IsPresent key="proximity.mtg.flipped.proximity.mtg.types.creature" />
+                            <IsEquals key="proximity.mtg.types.creature" />
+                        </Conditions>
+                    </Wrap>
+                    <Style font="MPlantin" italicFont="MPlantin-Italic" color="#FFFFFF" size="110" />
+                </Group>
+                <Group id="bottom_text">
+                    <HorizontalLayout id="set_lang_and_artist" x="285" y="4136">
+                        <Text y="2" value="${set}">
+                            <Style font="Gotham-Medium-Regular" size="68" capitalization="all_caps" kerning="10">
+                                <Outline color="#000000" weight="0" />
+                            </Style>
+                        </Text>
+                        <Spacer height="5" width="13" />
+                        <Text value="•">
+                            <Style font="Altone" size="69" />
+                        </Text>
+                        <Spacer height="5" width="28" />
+                        <Text id="lang" value="${lang}" y="2">
+                            <Style font="Gotham-Medium-Regular" size="68" capitalization="all_caps" kerning="12" />
+                        </Text>
+                        <Spacer height="5" width="27" />
+                        <HorizontalLayout>
+                            <Text id="brush" y="2" value="a">
+                                <Style font="NDPMTG" size="80" />
+                            </Text>
+                            <Spacer height="5" width="26" />
+                            <Text id="artist" value="${artist}">
+                                <Style font="Beleren Small Caps" size="75" kerning="1.5" />
+                            </Text>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <Group id="disclaimer">
+                        <Text x="285" y="4209" value="2022 Custom Proxy">
+                            <Style font="Altone" size="70" />
+                        </Text>
+                        <Text value="NOT FOR SALE" x="960" y="4209">
+                            <Style font="Beleren2016-Bold" size="71" kerning="1" />
+                        </Text>
+                    </Group>
+                    <Selector id="copyright">
+                        <Text value="™ &amp; © 2021 Wizards of the Coast" alignment="right" x="2956" y="4207">
+                            <Style font="MPlantin" size="68" />
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="proximity.mtg.types.planeswalker" />
+                                    <IsPresent key="proximity.mtg.types.creature" />
+                                    <IsPresent key="proximity.mtg.types.vehicle" />
+                                </Or>
+                            </Conditions>
+                        </Text>
+                        <Text value="™ &amp; © 2021 Wizards of the Coast" alignment="right" x="2956" y="4130">
+                            <Style font="MPlantin" size="68" />
+                        </Text>
+                        <Conditions>
+                            <IsEquals key="proximity.options.copyright" />
+                        </Conditions>
+                    </Selector>
+                    <Style color="#FFFFFF">
+                        <Outline color="#000000" weight="10" />
+                        <Conditions>
+                            <IsEquals key="proximity.mtg.options.bottom_text_Outline" />
+                        </Conditions>
+                    </Style>
+                    <Style color="#FFFFFF" />
+                </Group>
+                <Group id="overlays">
+                    <Group id="loyalty">
+                        <Image src="../loyalty" />
+                        <Text x="2782" y="4073" alignment="center" value="${loyalty}">
+                            <Style font="Beleren2016-Bold" size="170" color="#FFFFFF" />
+                        </Text>
+                        <Conditions>
+                            <IsPresent key="proximity.mtg.types.planeswalker" />
+                        </Conditions>
+                    </Group>
+                    <Group id="mdfc">
+                        <Fork>
+                            <Selector id="top">
+                                <Image id="artifact">
+                                    <Conditions>
+                                        <IsEquals key="colorless_artifact" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colorless">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.color_count" value="0" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colored" src="$join{colors}">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.color_count" value="1" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="gold" />
+                            </Selector>
+                            <Selector id="bottom">
+                                <Image id="colorless">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.flipped.proximity.mtg.color_count" value="0" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="colored" src="$join{proximity.mtg.flipped.colors}">
+                                    <Conditions>
+                                        <IsEquals key="proximity.mtg.flipped.proximity.mtg.color_count" value="1" />
+                                    </Conditions>
+                                </Image>
+                                <Image id="gold" />
+                            </Selector>
+                            <Branches>
+                                <Branch id="front">
+                                    <IsEquals key="proximity.mtg.front_face" />
+                                </Branch>
+                                <Branch id="back" />
+                            </Branches>
+                        </Fork>
+                        <Conditions>
+                            <IsEquals key="layout" value="modal_dfc" />
+                        </Conditions>
+                    </Group>
+                    <Group id="transform">
+                        <Image id="sun">
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="frame_effects.sunmoondfc" />
+                                    <IsEquals key="set" value="mid" />
+                                </Or>
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Conditions>
+                        </Image>
+                        <Image id="moon">
+                            <Conditions>
+                                <Or>
+                                    <IsPresent key="frame_effects.sunmoondfc" />
+                                    <IsEquals key="set" value="mid" />
+                                </Or>
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="pwo">
+                            <Conditions>
+                                <IsPresent key="frame_effects.originpwdfc" />
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Conditions>
+                        </Image>
+                        <Image id="pw">
+                            <Conditions>
+                                <IsPresent key="frame_effects.originpwdfc" />
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="compass">
+                            <Conditions>
+                                <IsPresent key="frame_effects.compasslanddfc" />
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Conditions>
+                        </Image>
+                        <Image id="land">
+                            <Conditions>
+                                <IsPresent key="frame_effects.compasslanddfc" />
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Image id="eldrazi moon">
+                            <Conditions>
+                                <IsPresent key="frame_effects.mooneldrazidfc" />
+                                <IsEquals key="proximity.mtg.front_face" />
+                            </Conditions>
+                        </Image>
+                        <Image id="eldrazi">
+                            <Conditions>
+                                <IsPresent key="frame_effects.mooneldrazidfc" />
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Conditions>
+                        </Image>
+                        <Conditions>
+                            <IsEquals key="layout" value="transform" />
+                        </Conditions>
+                    </Group>
+                </Group>
+                <SquishBox id="flipped">
+                    <Main id="cost">
+                        <Text x="1435" y="4000" alignment="right" value="${proximity.mtg.flipped.mana_cost}">
+                            <Style font="NDPMTG" size="125" />
+                        </Text>
+                    </Main>
+                    <Flex id="types">
+                        <Text x="345" y="4000" value="${proximity.mtg.flipped.proximity.mtg.main_types}">
+                            <Style font="Beleren2016-Bold" color="#FFFFFF" size="100" />
+                            <Conditions>
+                                <IsEquals key="proximity.front_face" />
+                            </Conditions>
+                        </Text>
+                        <Text x="345" y="4000" value="${proximity.mtg.flipped.proximity.mtg.main_types}">
+                            <Style font="Beleren2016-Bold" color="#000000" size="100" />
+                            <Conditions>
+                                <IsEquals key="proximity.mtg.front_face" value="false" />
+                            </Conditions>
+                        </Text>
+                    </Flex>
+                    <Conditions>
+                        <IsEquals key="layout" value="modal_dfc" />
+                    </Conditions>
+                </SquishBox>
+            </Group>
+        </Selector>
+    </Layers>
+</Template>

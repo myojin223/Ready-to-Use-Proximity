@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
-<Template name="Kaldheim" author="ChilliAxe and Haven King" width="3288" height="4488"
-          proximity_version="0.6.1"
+<Template name="M15 Master" author="ChilliAxe and Haven King" width="3288" height="4488"
+          proximity_version="0.5.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://hephaestus.dev/proximity/template.xsd">
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Proximity-Engine/Proximity/0.5.0/template.xsd">
     <Options>
         <!-- Outline the text at the bottom of the card (copyright, artist credit, etc.) -->
         <ToggleOption id="bottom_text_outline" default="false"/>
@@ -44,7 +44,7 @@
     </ConditionDefinitions>
     <Resources>
         <Resource type="assets" location="https://hephaestus.dev/proximity/resources/set_symbols" version="1.0.0"/>
-        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.8"/>
+        <Resource type="assets" location="https://raw.githubusercontent.com/Proximity-Engine/M15-Master-Template" version="1.0.6"/>
     </Resources>
     <Layers>
         <Selector>
@@ -582,7 +582,7 @@
                         <Selector id="name">
                             <Selector id="dfc">
                                 <Text x="630" y="506" value="${name}">
-                                    <Style font="Beleren2016-Bold" color="#FFFFFF" size="160"/>
+                                    <Style font="Beleren2016-Bold" color="#000000" size="160"/>
                                     <Conditions>
                                         <IsEquals key="proximity.mtg.front_face"/>
                                     </Conditions>
@@ -867,7 +867,7 @@
                         </HorizontalLayout>
                     </HorizontalLayout>
                     <Group id="disclaimer">
-                        <Text x="225" y="4131" value="2022 WarpDandy ¤">
+                        <Text x="225" y="4131" value="2022 Custom Proxy">
                             <Style font="Altone" size="70"/>
                         </Text>
                         <Text value="NOT FOR SALE" x="900" y="4136">
