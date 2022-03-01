@@ -1,5 +1,7 @@
 # Proximity
 
+https://img.shields.io/github/repo-size/PedroLuisBernardos/Ready-to-Use-Proximity
+
 ## :clipboard: Prerequisites
 
 You'll need [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
