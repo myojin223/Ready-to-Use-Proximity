@@ -49,9 +49,6 @@ ProxyRename "FANG"
 java -jar proximity.jar --cards=Decklist.txt --reminder_text=false --template=fullart --copyright=false --use_card_back=false --flavor_text=false --border=none
 ProxyRename "Full Art"
 
-java -jar proximity.jar --cards=Decklist.txt --use_official_art=true --reminder_text=true --template=InventionSilver --copyright=false
-ProxyRename "Inventions Silver"
-
 java -jar proximity.jar --cards=Decklist.txt --art_source=BEST --reminder_text=true --template=Invention --copyright=false --use_card_back=false
 ProxyRename "Invention"
 

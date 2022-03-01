@@ -61,7 +61,7 @@
                 </Conditions>
             </Image>
             <Group>
-                <Image id="art" x="256" y="605" width="2806" height="1882" url="${image_uris.art_crop}">
+                <Image id="art" x="256" y="261" width="2806" height="3855" url="${image_uris.art_crop}">
                     <Conditions>
                         <Not>
                             <IsEquals key="proximity.options.art_source" value="NONE"/>
@@ -890,7 +890,7 @@
                         </HorizontalLayout>
                     </HorizontalLayout>
                     <Group id="disclaimer">
-                        <Text x="335" y="4131" value="2022 WarpDandy ¤">
+                        <Text x="335" y="4131" value="2022 Custom Proxy">
                             <Style font="Altone" size="70"/>
                         </Text>
                         <Text value="NOT FOR SALE" x="1010" y="4136">
