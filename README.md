@@ -78,7 +78,7 @@ Proximity is a [Haven-King](https://github.com/Proximity-Engine/Proximity) softw
 
 For more information, you can join the [discord](https://discord.gg/ecqZxbYR) group.
 
-I, [PedroLuisBernardos](https://github.com/PedroLuisBernardos) created this `README.md`, modified a bit the `Render All.ps1` file and joined all the [myojin223](https://github.com/myojin223?tab=repositories) templates in one file.
+I, [PedroLuisBernardos](https://github.com/PedroLuisBernardos), created this `README.md`, modified a bit the `Render All.ps1` file and joined all the [myojin223](https://github.com/myojin223?tab=repositories) templates in one file.
 
 ## Other ressources
 
