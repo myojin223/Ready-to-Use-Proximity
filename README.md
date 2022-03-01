@@ -77,3 +77,11 @@ This repo was forked from the [myojin223](https://github.com/myojin223/Ready-to-
 Proximity is a [Haven-King](https://github.com/Proximity-Engine/Proximity) software.
 
 For more information, you can join the [discord](https://discord.gg/ecqZxbYR) group.
+
+## Other ressources
+
+* [Card Conjurer](https://cardconjurer.com/creator/?copyright)
+  * [GitHub](https://github.com/ImKyle4815/cardconjurer)
+* [mtgpics](https://www.mtgpics.com/index)
+* [MPC Fill](https://mpcfill.com/)
+* [Make Playing Cards](https://www.makeplayingcards.com/)
