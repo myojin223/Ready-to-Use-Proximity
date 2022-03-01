@@ -68,7 +68,7 @@ Sol Ring (C19)
 Sol Ring --set_symbol="khm" -override=set:"stx" --override=artist:"Gandalf"
 ```
 
-## Authors
+## 👤 Authors
 
 I let all the `README.md` files inside each *template*, their authors are specified there. If there are any other instructions you can also read it there (for example, with the base and full art with the `template.xml` file in the `/templates/Invention` folder).
 
@@ -77,6 +77,8 @@ This repo was forked from the [myojin223](https://github.com/myojin223/Ready-to-
 Proximity is a [Haven-King](https://github.com/Proximity-Engine/Proximity) software.
 
 For more information, you can join the [discord](https://discord.gg/ecqZxbYR) group.
+
+I, [PedroLuisBernardos](https://github.com/PedroLuisBernardos) created this `README.md`, modified a bit the `Render All.ps1` file and joined all the [myojin223](https://github.com/myojin223?tab=repositories) templates in one file.
 
 ## Other ressources
 
