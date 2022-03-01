@@ -1,6 +1,6 @@
 # Proximity
 
-https://img.shields.io/github/repo-size/PedroLuisBernardos/Ready-to-Use-Proximity
+![repo size](https://img.shields.io/github/repo-size/PedroLuisBernardos/Ready-to-Use-Proximity)
 
 ## :clipboard: Prerequisites
 
