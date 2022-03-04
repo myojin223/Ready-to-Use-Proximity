@@ -37,6 +37,9 @@ ProxyRename "DoubleFeature"
 java -jar proximity.jar --cards=Decklist.txt --art_source=LOCAL --reminder_text=true --template=Extended --copyright=false --use_card_back=false --watermark=NONE
 ProxyRename "Extended"
 
+java -jar proximity.jar --cards=Decklist.txt --art_source=LOCAL --reminder_text=true --template=Equinox --copyright=false --use_card_back=false
+ProxyRename "Equinox"
+
 java -jar proximity.jar --cards=Decklist.txt --art_source=LOCAL --reminder_text=true --template=FANGEXT --copyright=false --use_card_back=false
 ProxyRename "FANGTEXT"
 
