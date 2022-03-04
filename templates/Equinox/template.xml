@@ -523,7 +523,7 @@
                 </Selector>
                 <SquishBox id="title_bar">
                     <Main id="cost">
-                        <HorizontalLayout x="2925" y="512" alignment="end">
+                        <HorizontalLayout x="2915" y="512" alignment="end">
                             <Spacer width="50" height="15"/>
                             <Text value="${mana_cost}">
                                 <Style font="NDPMTG" size="175">
@@ -558,7 +558,7 @@
                                     </Or>
                                 </Conditions>
                             </Selector>
-                            <Text x="380" y="506" value="${name}">
+                            <Text x="413" y="525" value="${name}">
                                 <Style font="Beleren2016-Bold" color="#000000" size="160"/>
                             </Text>
                         </Selector>
@@ -579,12 +579,12 @@
                         <Group>
                             <Selector>
                                 <!-- Certain sets don't use a uniform color palette, so this is a necessary evil -->
-                                <SVG x="2882" y="2650" src="${rarity}/${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                <SVG x="2875" y="2627" src="${rarity}/${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
                                     <Conditions>
                                         <FileExists src="${rarity}/${proximity.options.set_symbol}.svg"/>
                                     </Conditions>
                                 </SVG>
-                                <SVG x="2882" y="2650" src="${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
+                                <SVG x="2875" y="2627" src="${proximity.options.set_symbol}" width="350" height="155" horizontal_alignment="end">
                                     <Conditions>
                                         <FileExists src="${proximity.options.set_symbol}.svg"/>
                                     </Conditions>
@@ -607,7 +607,7 @@
                     </Main>
                     <Flex>
                         <Selector id="types">
-                            <Text id="back" x="381" y="2690" value="${type_line}">
+                            <Text id="back" x="420" y="2678" value="${type_line}">
                                 <AttributeModifier name="x" value="531">
                                     <IsPresent key="color_indicator"/>
                                     <FileExists src="../../overlays/color_indicators/$join{color_indicator}.png"/>
@@ -827,7 +827,7 @@
                         <Text x="335" y="4181" value="2022 Custom Proxy">
                             <Style font="Altone" size="70"/>
                         </Text>
-                        <Text value="NOT FOR SALE" x="1010" y="4186">
+                        <Text value="pedro2163" x="1010" y="4186">
                             <Style font="Beleren2016-Bold" size="71" kerning="1"/>
                         </Text>
                     </Group>
