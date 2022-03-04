@@ -8,6 +8,6 @@
 
 ## For Proximity 0.5.4+
 
-![preview image](Preview Images/Esper Sentinel (MH2 Equinox).png)
-![preview image](/Preview Images/Omnath, Locus of Creation (ZNR Equinox).png)
-![preview image](/Preview Images/Waterlogged Grove (MH1 Equinox).png)
+| | | |
+| --- | --- | --- |
+| ![preview image](/Preview%20Images/Esper%20Sentinel%20(MH2%20Equinox).png) | ![preview image](/Preview%20Images/Omnath,%20Locus%20of%20Creation%20(ZNR%20Equinox).png) | ![preview image](/Preview%20Images/Waterlogged%20Grove%20(MH1%20Equinox).png) |
