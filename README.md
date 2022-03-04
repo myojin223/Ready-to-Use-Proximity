@@ -16,6 +16,12 @@ git clone https://github.com/PedroLuisBernardos/Ready-to-Use-Proximity.git
 
 or you can [download the zip file](https://github.com/PedroLuisBernardos/Ready-to-Use-Proximity/archive/refs/heads/main.zip). You'll need to `unzip` it to have access to the folder.
 
+Now, create three new folders: `art`, `images` and `Completed`.
+
+```bash
+mkdir art images Completed
+```
+
 ## :shell: How to use it?
 
 ### Decklist.txt
