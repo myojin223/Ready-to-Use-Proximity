@@ -671,7 +671,7 @@
                                 <IsPresent key="proximity.mtg.types.vehicle"/>
                             </Conditions>
                         </Text>
-                        <Text id="creature" x="2740" y="4115" alignment="center" value="${power}/${toughness}">
+                        <Text id="creature" x="2740" y="4054" alignment="center" value="${power}/${toughness}">
                             <Style font="Beleren2016-Bold" color="#000000" size="160"/>
                             <Conditions>
                                 <IsPresent key="proximity.mtg.types.creature"/>
