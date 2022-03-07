@@ -93,5 +93,6 @@ I, [PedroLuisBernardos](https://github.com/PedroLuisBernardos), created this `RE
 * [Card Conjurer](https://cardconjurer.com/creator/?copyright)
   * [GitHub](https://github.com/ImKyle4815/cardconjurer)
 * [mtgpics](https://www.mtgpics.com/index)
+* [Scryfall](https://scryfall.com/)
 * [MPC Fill](https://mpcfill.com/)
 * [Make Playing Cards](https://www.makeplayingcards.com/)
