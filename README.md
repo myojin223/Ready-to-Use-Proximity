@@ -22,7 +22,7 @@ Now, create three new folders: `art`, `images` and `Completed`.
 mkdir art images Completed
 ```
 
-And install each font inside the `/fonts` folder.
+And install each font inside the `/fonts` folder present in any `/template`.
 
 ## :shell: How to use it?
 
