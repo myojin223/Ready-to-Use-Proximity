@@ -18,6 +18,8 @@ or you can [download the zip file](https://github.com/PedroLuisBernardos/Ready-t
 
 Now, create three new folders: `art`, `images` and `Completed`.
 
+And install each font inside the `/fonts` folder.
+
 ```bash
 mkdir art images Completed
 ```
