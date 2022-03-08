@@ -36,7 +36,7 @@ You have a bunch of options that are listed [in this file](Ready-to-Use-Proximit
 
 ```
 Sol Ring (C19)
-Sol Ring --set_symbol="khm" -override=set:"stx" --override=artist:"Gandalf"
+Sol Ring --set_symbol="khm" --override=set:"stx" --override=artist:"Gandalf"
 Sol Ring --override=image_uris.art_crop:"file:///C:/Users/pedro/Downloads/Proximity/art/a.jpg"
 ```
 
