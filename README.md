@@ -30,6 +30,10 @@ In this file you will add the cards you want to be proxied. Here are some exampl
 Sol Ring
 ```
 
+### art/
+
+If you want to use custom images you need to add them into the `art/` folder. Proximity will automatically understand that a picture with the same name of the card is present and will use it. You need to name those images this way: `Card Name (Artist Name)`, so for instance: `Purphoros, God of the Forge (Jason A. Engle)`.
+
 #### Options and Overrride
 
 You have a bunch of options that are listed [in this file](Options-Override.pdf). You can also specify the set you want to be used (see **C19** below).
