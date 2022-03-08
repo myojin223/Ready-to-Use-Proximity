@@ -32,7 +32,7 @@ Sol Ring
 
 #### Options and Overrride
 
-You have a bunch of options that are listed [in this file](Ready-to-Use-Proximity\Options-Override.pdf). You can also specify the set you want to be used (see **C19** below).
+You have a bunch of options that are listed [in this file](Options-Override.pdf). You can also specify the set you want to be used (see **C19** below).
 
 ```
 Sol Ring (C19)
