@@ -74,6 +74,10 @@ Sol Ring (C19)
 Sol Ring --set_symbol="khm" -override=set:"stx" --override=artist:"Gandalf"
 ```
 
+### .cache
+
+A `.cache/` folder will be created after you make your first proxy. This folder contains the info about your images (so if you want to make another proxy with the same images it will be faster). If you change your images after doing a proxy and you don't delete the cache, the images **Will not change**. So, be sure to delete that directory if you want to modify your art!
+
 ## Templates
 
 You can find a lot of templates in [myojin223's repos](https://github.com/myojin223?tab=repositories). I've also made an [Equinox template](https://github.com/PedroLuisBernardos/Equinox-template-for-Proximity) inspired of CantaPerMe's Photoshop template.
