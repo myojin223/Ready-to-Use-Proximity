@@ -36,7 +36,7 @@ If you want to use custom images you need to add them into the `art/` folder. Pr
 
 #### Options and Overrride
 
-You have a bunch of options that are listed [in this file](Options-Override.pdf). You can also specify the set you want to be used (see **C19** below).
+You have a bunch of options that are listed [in this file](Proximity%20Override%20Command%20&%20Options.pdf). You can also specify the set you want to be used (see **C19** below).
 
 ```
 Sol Ring (C19)
@@ -72,6 +72,62 @@ For example, if you have this file, it will ignore the first Sol Ring:
 ```
 Sol Ring (C19)
 Sol Ring --set_symbol="khm" -override=set:"stx" --override=artist:"Gandalf"
+```
+
+## Templates
+
+You can find a lot of templates in [myojin223's repos](https://github.com/myojin223?tab=repositories). I've also made an [Equinox template](https://github.com/PedroLuisBernardos/Equinox-template-for-Proximity) inspired of CantaPerMe's Photoshop template.
+
+### How to modify it?
+
+You can modify the `template.xml` file to change the final result of your proxys.
+
+#### Art position
+
+ You will need to modify the `x`, `y`, `width` and `height` to adjust your image.
+ 
+```xml
+<Image id="art" x="0" y="535" width="3288" height="2385" url="${image_uris.art_crop}">
+ ```
+ 
+#### Bottom text (legal and author)
+
+You will need to change the text and maybe modify the `x` and `y` variables to change the position.
+
+ ```xml
+<HorizontalLayout id="set_lang_and_artist" x="335" y="4209">
+     <Text y="2" value="${set}">
+         <Style font="Gotham-Medium-Regular" size="68" capitalization="all_caps" kerning="10">
+             <Outline color="#000000" weight="0"/>
+         </Style>
+     </Text>
+     <Spacer height="5" width="13"/>
+     <Text value="•">
+         <Style font="Altone" size="69"/>
+     </Text>
+     <Spacer height="5" width="28"/>
+     <Text id="lang" value="${lang}" y="2">
+         <Style font="Gotham-Medium-Regular" size="68" capitalization="all_caps" kerning="12"/>
+     </Text>
+     <Spacer height="5" width="27"/>
+     <HorizontalLayout>
+         <Text id="brush" y="2" value="a">
+             <Style font="NDPMTG" size="80"/>
+         </Text>
+         <Spacer height="5" width="26"/>
+         <Text id="artist" value="${artist}">
+             <Style font="Beleren Small Caps" size="75" kerning="1.5"/>
+         </Text>
+     </HorizontalLayout>
+ </HorizontalLayout>
+ <Group id="disclaimer">
+     <Text x="335" y="4131" value="2022 Custom Proxy">
+         <Style font="Altone" size="70"/>
+     </Text>
+     <Text value="NOT FOR SALE" x="1010" y="4136">
+         <Style font="Beleren2016-Bold" size="71" kerning="1"/>
+     </Text>
+ </Group>
 ```
 
 ## 👤 Authors
