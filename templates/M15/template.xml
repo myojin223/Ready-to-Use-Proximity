@@ -755,13 +755,13 @@
                     <Selector id="basics">
                         <Effect name="brightness" amount="-15%">
                             <Mask>
-                                <Image src="flavor/$join{colors}" x="1644" y="3400" horizontal_alignment="middle" vertical_alignment="middle"/>
+                                <Image src="flavor/$join{colors}" x="1644" y="2250" horizontal_alignment="middle" vertical_alignment="middle"/>
                             </Mask>
                             <Conditions>
                                 <IsPresent key="flavor_text"/>
                             </Conditions>
                         </Effect>
-                        <Image src="standard/$join{colors}" x="1644" y="3400" horizontal_alignment="middle" vertical_alignment="middle"/>
+                        <Image src="standard/$join{colors}" x="1644" y="2250" horizontal_alignment="middle" vertical_alignment="middle"/>
                         <Conditions>
                             <IsPresent key="proximity.mtg.types.basic"/>
                             <IsEquals key="proximity.mtg.color_count" value="1"/>
